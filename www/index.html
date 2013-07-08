@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <script type="text/javascript" src="jquery.mobile-1.3.0/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" />
+        <title>Open Libra Searcher</title>
+    </head>
+    <body>
+        <div data-role="page" id="index">
+            <div data-role="content">
+                <h1>Open Libra<br />Searcher</h1>
+                <a href="#principal" data-role="button">Avanzar</a>
+            </div>
+        </div>
+        <div data-role="page" id="principal">
+            <div data-role="header">
+                <h1>Principal</h1>
+            </div>
+            <div data-role="content">
+                <input type="text" placeholder="Busca en OpenLibra" />
+                <input type="submit" data-inline="true" data-icon="search" />
+                <h2>Recientes</h2>
+                <p>recent</p>
+                <p>recent</p>
+                <a href="#elegir" data-role="button">Mas</a>
+            </div>
+            <div></div>
+        </div>
+        <div data-role="page" id="elegir">
+            <div data-role="header">
+                <a href="#principal">Volver</a>
+                <h1>Elegir</h1>
+            </div>
+            <div data-role="content">
+                <a href="#criteria" data-role="button">Criteria</a>
+                <h2>O</h2>
+                <a href="#cantidad" data-role="button">Cantidad</a>
+            </div>
+            <div></div>
+        </div>
+        <div data-role="page" id="criteria">
+            <div data-role="header">
+                <a href="#elegir">Volver</a>
+                <a href="#cantidad">Cantidad</a>
+                <h1>Busqueda por criteria</h1>
+            </div>
+            <div data-role="content">
+                <h2>Mas vistos</h2>
+                <p>Publicado</p>
+                <p>Publicado</p>
+                <h2>Mas comentados</h2>
+                <p>Publicado</p>
+                <p>Publicado</p>
+                <h2>Mas votados</h2>
+                <p>Publicado</p>
+                <p>Publicado</p>
+            </div>
+            <div></div>
+        </div>
+        <div data-role="page" id="cantidad">
+            <div data-role="header">
+                <a href="#elegir">Volver</a>
+                <a href="#criteria">Criteria</a>
+                <h1>Busqueda por cantidad</h1>
+            </div>
+            <div data-role="content">
+                <h2>Ultimos 10 publicados</h2>
+                <p>Publicado</p>
+                <p>Publicado</p>
+                <p>Publicado</p>
+                <p>Publicado</p>
+                <p>Publicado</p>
+                <p>Publicado</p>
+            </div>
+            <div></div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
