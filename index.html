@@ -7,18 +7,36 @@
         <script type="text/javascript" src="jquery.mobile-1.3.0/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js"></script>
         <link rel="stylesheet" type="text/css" href="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" />
-        <title>Open Libra Searcher</title>
+        <title>Open Searcher</title>
     </head>
     <body>
-        <div data-role="page" id="index">
+
+        <!-- SPLASH SCREEN -->
+        <div data-role="page" id="splashscreen">
             <div data-role="content">
-                <h1>Open Libra<br />Searcher</h1>
-                <a href="#principal" data-role="button">Avanzar</a>
+                <img src="images/logo.png" />
             </div>
         </div>
-        <div data-role="page" id="principal">
+        <!-- SPLASH SCREEN -->
+
+        <!-- ABOUT PAGE -->
+        <div data-role="page" id="aboutpage">
+            <div data-role="header">
+                <h1>Acerca de Open Searcher</h1>
+                <a href="#mainpage" data-icon="home">Inicio</a>
+            </div>
+            <div data-role="content">
+                <h1>Open Searcher</h1>
+                <p>Stretch mark territory chase imaginary bugs stare at ceiling yet behind the couch. Mark territory attack feet but why must they do that yet all of a sudden go crazy. Stretch. Under the bed play time but sun bathe yet destroy couch.</p>
+            </div>
+        </div>
+        <!-- /ABOUT PAGE -->
+
+        <!-- MAIN PAGE -->
+        <div data-role="page" id="mainpage">
             <div data-role="header">
                 <h1>Principal</h1>
+                <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
             </div>
             <div data-role="content">
                 <input type="text" placeholder="Busca en OpenLibra" />
@@ -27,62 +45,74 @@
                 <div id="resultado0"></div>
                 <div id="resultado1"></div>
                 <div id="resultado2"></div>
-                <a href="#elegir" data-role="button">Mas</a>
             </div>
-            <div></div>
+            <div data-role="footer" data-id="toolbar">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#criteriapage" data-icon="bars">Criteria</a></li>
+                        <li><a href="#quantitypage" data-icon="grid">Cantidad</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div data-role="page" id="elegir">
+        <!-- MAIN PAGE -->
+
+        <!-- CRITERIA PAGE -->
+        <div data-role="page" id="criteriapage">
             <div data-role="header">
-                <a href="#principal">Volver</a>
-                <h1>Elegir</h1>
-            </div>
-            <div data-role="content">
-                <a href="#criteria" data-role="button">Criteria</a>
-                <h2>O</h2>
-                <a href="#cantidad" data-role="button">Cantidad</a>
-            </div>
-            <div></div>
-        </div>
-        <div data-role="page" id="criteria">
-            <div data-role="header">
-                <a href="#elegir">Volver</a>
-                <a href="#cantidad">Cantidad</a>
                 <h1>Busqueda por criteria</h1>
+                <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
             </div>
             <div data-role="content">
                 <h2>Mas vistos</h2>
-                <p>Publicado</p>
-                <p>Publicado</p>
+
                 <h2>Mas comentados</h2>
-                <p>Publicado</p>
-                <p>Publicado</p>
+
                 <h2>Mas votados</h2>
-                <p>Publicado</p>
-                <p>Publicado</p>
+
             </div>
-            <div></div>
+            <div data-role="footer" data-id="toolbar">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainpage" data-icon="home">Inicio</a></li>
+                        <li><a href="#quantitypage"data-icon="grid">Cantidad</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div data-role="page" id="cantidad">
+        <!-- /CRITERIA PAGE -->
+
+        <!-- QUANTITY PAGE -->
+        <div data-role="page" id="quantitypage">
             <div data-role="header">
-                <a href="#elegir">Volver</a>
-                <a href="#criteria">Criteria</a>
                 <h1>Busqueda por cantidad</h1>
+                <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
             </div>
-            <div data-role="content" id="cantidadPublicados">
+            <div data-role="content" id="publishedamount">
                 <h2>Ultimos 10 publicados</h2>
             </div>
-            <div></div>
+            <div data-role="footer" data-id="toolbar">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainpage" data-icon="home">Inicio</a></li>
+                        <li><a href="#quantitypage"data-icon="bars">Criteria</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        <!-- /QUANTITY PAGE -->
+
+
+        <!-- JAVASCRIPT REQUIRED -->
+
+        <!-- /JAVASCRIPT REQUIRED -->
+
+        <!-- OPEN LIBRA JSON LOGIC -->
         <script type="text/javascript">
             $(document).ready(function(){
                 /* */
                 var termino = "589";
-                $.getJSON("http://www.etnassoft.com/api/v1/get/?id="+termino+"&callback=?", function(results){
+                // $.getJSON("http://www.etnassoft.com/api/v1/get/?id="+termino+"&callback=?", function(results){
                     /*$("#resultado").html(results[0].title+'<br />'+results[0].author+'<br />'+results[0].language+'<br />'+results[0].pages);
                     $("<img/>",{
                         'src':results[0].cover
@@ -90,27 +120,27 @@
                 });
 
                 /*Trayendo los 3 mas recientes agregados a open libra para la principal*/
-                $.getJSON("http://www.etnassoft.com/api/v1/get/?since=last_week&num_items=3&callback=?",function(results){
-                    $("#resultado0").html(results[0].title+'<br />'+results[0].author+'<br />'+results[0].language+'<br />'+results[0].pages);
-                    $("<img/>",{
-                        'src':results[0].cover
-                    }).appendTo('#resultado0');
+                // $.getJSON("http://www.etnassoft.com/api/v1/get/?since=last_week&num_items=3&callback=?",function(results){
+                    // $("#resultado0").html(results[0].title+'<br />'+results[0].author+'<br />'+results[0].language+'<br />'+results[0].pages);
+                    // $("<img/>",{
+                    //     'src':results[0].cover
+                    // }).appendTo('#resultado0');
 
-                    $("#resultado1").html(results[1].title+'<br />'+results[1].author+'<br />'+results[1].language+'<br />'+results[1].pages);
-                    $("<img/>",{
-                        'src':results[1].cover
-                    }).appendTo('#resultado1');
+                    // $("#resultado1").html(results[1].title+'<br />'+results[1].author+'<br />'+results[1].language+'<br />'+results[1].pages);
+                    // $("<img/>",{
+                    //     'src':results[1].cover
+                    // }).appendTo('#resultado1');
 
-                    $("#resultado2").html(results[2].title+'<br />'+results[2].author+'<br />'+results[2].language+'<br />'+results[2].pages);
-                    $("<img/>",{
-                        'src':results[2].cover
-                    }).appendTo('#resultado2');
+                    // $("#resultado2").html(results[2].title+'<br />'+results[2].author+'<br />'+results[2].language+'<br />'+results[2].pages);
+                    // $("<img/>",{
+                    //     'src':results[2].cover
+                    // }).appendTo('#resultado2');
                 });
 
                 /* ultimos 10 publicados para la seccion cantidad*/
-                $.getJSON("http://www.etnassoft.com/api/v1/get/?newest&num_items=10&callback=?",function(results){
+                // $.getJSON("http://www.etnassoft.com/api/v1/get/?newest&num_items=10&callback=?",function(results){
                     for(var i = 0; i <= results[0].length; i++){
-                        console.log(results[i]);
+                        // console.log(results[i]);
                         /*$('div/>',{
                             html: results[i].title
                         }).appendTo("#cantidadPublicados");*/
@@ -118,5 +148,8 @@
                 });
             });
         </script>
+        <!-- /OPEN LIBRA JSON LOGIC -->
+
+
     </body>
 </html>
