@@ -21,22 +21,6 @@
   </div>
   <!-- SPLASH SCREEN -->
 
-
-  <!-- ABOUT PAGE -->
-  <!-- Pagina para dar informacion sobre esta aplicacion -->
-  <div data-role="page" id="aboutpage">
-    <div data-role="header">
-      <h1>Acerca de Open Searcher</h1>
-      <a href="#mainpage" data-icon="home">Inicio</a>
-    </div>
-    <div data-role="content">
-      <h1>Open Searcher</h1>
-      <p>Stretch mark territory chase imaginary bugs stare at ceiling yet behind the couch. Mark territory attack feet but why must they do that yet all of a sudden go crazy. Stretch. Under the bed play time but sun bathe yet destroy couch.</p>
-    </div>
-  </div>
-  <!-- /ABOUT PAGE -->
-
-
   <!-- MAIN PAGE -->
   <!-- Pantalla principal. La finalidad es mostrar una caja de busqueda y
   mostrar los mas recientes libros publicados en open libra -->
@@ -61,6 +45,20 @@
     </div>
   </div>
   <!-- /MAIN PAGE -->
+
+  <!-- ABOUT PAGE -->
+  <!-- Pagina para dar informacion sobre esta aplicacion -->
+  <div data-role="page" id="aboutpage">
+    <div data-role="header">
+      <h1>Acerca de Open Searcher</h1>
+      <a href="#mainpage" data-icon="home">Inicio</a>
+    </div>
+    <div data-role="content">
+      <h1>Open Searcher</h1>
+      <p>Stretch mark territory chase imaginary bugs stare at ceiling yet behind the couch. Mark territory attack feet but why must they do that yet all of a sudden go crazy. Stretch. Under the bed play time but sun bathe yet destroy couch.</p>
+    </div>
+  </div>
+  <!-- /ABOUT PAGE -->
 
 
   <!-- CRITERIA PAGE -->
@@ -124,6 +122,12 @@
 <!-- OPEN LIBRA JSON LOGIC -->
 <script type="text/javascript">
 
+  $(document).on('pageinit','#splashscreen',function(){
+    setTimeout(function(){
+        $.mobile.changePage("#mainpage", "fade");
+    }, 3000);
+  });
+
   $(document).ready(function(){
 
 
@@ -170,7 +174,6 @@
 
 </script>
 <!-- /OPEN LIBRA JSON LOGIC -->
-
 
 </body>
 </html>
