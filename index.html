@@ -1,155 +1,176 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <script type="text/javascript" src="jquery.mobile-1.3.0/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" />
-        <title>Open Searcher</title>
-    </head>
-    <body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <script type="text/javascript" src="jquery.mobile-1.3.0/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" />
+  <title>Open Searcher</title>
+</head>
+<body>
 
-        <!-- SPLASH SCREEN -->
-        <div data-role="page" id="splashscreen">
-            <div data-role="content">
-                <img src="images/logo.png" />
-            </div>
-        </div>
-        <!-- SPLASH SCREEN -->
-
-        <!-- ABOUT PAGE -->
-        <div data-role="page" id="aboutpage">
-            <div data-role="header">
-                <h1>Acerca de Open Searcher</h1>
-                <a href="#mainpage" data-icon="home">Inicio</a>
-            </div>
-            <div data-role="content">
-                <h1>Open Searcher</h1>
-                <p>Stretch mark territory chase imaginary bugs stare at ceiling yet behind the couch. Mark territory attack feet but why must they do that yet all of a sudden go crazy. Stretch. Under the bed play time but sun bathe yet destroy couch.</p>
-            </div>
-        </div>
-        <!-- /ABOUT PAGE -->
-
-        <!-- MAIN PAGE -->
-        <div data-role="page" id="mainpage">
-            <div data-role="header">
-                <h1>Principal</h1>
-                <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
-            </div>
-            <div data-role="content">
-                <input type="text" placeholder="Busca en OpenLibra" />
-                <button data-inline="true" data-icon="search"></button>
-                <h2>Recientes</h2>
-                <div id="resultado0"></div>
-                <div id="resultado1"></div>
-                <div id="resultado2"></div>
-            </div>
-            <div data-role="footer" data-id="toolbar">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#criteriapage" data-icon="bars">Criteria</a></li>
-                        <li><a href="#quantitypage" data-icon="grid">Cantidad</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- MAIN PAGE -->
-
-        <!-- CRITERIA PAGE -->
-        <div data-role="page" id="criteriapage">
-            <div data-role="header">
-                <h1>Busqueda por criteria</h1>
-                <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
-            </div>
-            <div data-role="content">
-                <h2>Mas vistos</h2>
-
-                <h2>Mas comentados</h2>
-
-                <h2>Mas votados</h2>
-
-            </div>
-            <div data-role="footer" data-id="toolbar">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#mainpage" data-icon="home">Inicio</a></li>
-                        <li><a href="#quantitypage"data-icon="grid">Cantidad</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- /CRITERIA PAGE -->
-
-        <!-- QUANTITY PAGE -->
-        <div data-role="page" id="quantitypage">
-            <div data-role="header">
-                <h1>Busqueda por cantidad</h1>
-                <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
-            </div>
-            <div data-role="content" id="publishedamount">
-                <h2>Ultimos 10 publicados</h2>
-            </div>
-            <div data-role="footer" data-id="toolbar">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#mainpage" data-icon="home">Inicio</a></li>
-                        <li><a href="#quantitypage"data-icon="bars">Criteria</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- /QUANTITY PAGE -->
+  <!-- SPLASH SCREEN -->
+  <!-- pantalla inicial. La idea es que cargue por unos segundos
+  y luego de paso a la pantalla principal -->
+  <div data-role="page" id="splashscreen">
+      <div data-role="content">
+          <img src="images/logo.png" />
+      </div>
+  </div>
+  <!-- SPLASH SCREEN -->
 
 
-        <!-- JAVASCRIPT REQUIRED -->
-
-        <!-- /JAVASCRIPT REQUIRED -->
-
-        <!-- OPEN LIBRA JSON LOGIC -->
-        <script type="text/javascript">
-            $(document).ready(function(){
-                /* */
-                var termino = "589";
-                // $.getJSON("http://www.etnassoft.com/api/v1/get/?id="+termino+"&callback=?", function(results){
-                    /*$("#resultado").html(results[0].title+'<br />'+results[0].author+'<br />'+results[0].language+'<br />'+results[0].pages);
-                    $("<img/>",{
-                        'src':results[0].cover
-                    }).appendTo('#resultado');*/
-                });
-
-                /*Trayendo los 3 mas recientes agregados a open libra para la principal*/
-                // $.getJSON("http://www.etnassoft.com/api/v1/get/?since=last_week&num_items=3&callback=?",function(results){
-                    // $("#resultado0").html(results[0].title+'<br />'+results[0].author+'<br />'+results[0].language+'<br />'+results[0].pages);
-                    // $("<img/>",{
-                    //     'src':results[0].cover
-                    // }).appendTo('#resultado0');
-
-                    // $("#resultado1").html(results[1].title+'<br />'+results[1].author+'<br />'+results[1].language+'<br />'+results[1].pages);
-                    // $("<img/>",{
-                    //     'src':results[1].cover
-                    // }).appendTo('#resultado1');
-
-                    // $("#resultado2").html(results[2].title+'<br />'+results[2].author+'<br />'+results[2].language+'<br />'+results[2].pages);
-                    // $("<img/>",{
-                    //     'src':results[2].cover
-                    // }).appendTo('#resultado2');
-                });
-
-                /* ultimos 10 publicados para la seccion cantidad*/
-                // $.getJSON("http://www.etnassoft.com/api/v1/get/?newest&num_items=10&callback=?",function(results){
-                    for(var i = 0; i <= results[0].length; i++){
-                        // console.log(results[i]);
-                        /*$('div/>',{
-                            html: results[i].title
-                        }).appendTo("#cantidadPublicados");*/
-                    }
-                });
-            });
-        </script>
-        <!-- /OPEN LIBRA JSON LOGIC -->
+  <!-- ABOUT PAGE -->
+  <!-- Pagina para dar informacion sobre esta aplicacion -->
+  <div data-role="page" id="aboutpage">
+    <div data-role="header">
+      <h1>Acerca de Open Searcher</h1>
+      <a href="#mainpage" data-icon="home">Inicio</a>
+    </div>
+    <div data-role="content">
+      <h1>Open Searcher</h1>
+      <p>Stretch mark territory chase imaginary bugs stare at ceiling yet behind the couch. Mark territory attack feet but why must they do that yet all of a sudden go crazy. Stretch. Under the bed play time but sun bathe yet destroy couch.</p>
+    </div>
+  </div>
+  <!-- /ABOUT PAGE -->
 
 
-    </body>
+  <!-- MAIN PAGE -->
+  <!-- Pantalla principal. La finalidad es mostrar una caja de busqueda y
+  mostrar los mas recientes libros publicados en open libra -->
+  <div data-role="page" id="mainpage">
+    <div data-role="header">
+      <h1>Principal</h1>
+      <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
+    </div>
+    <div data-role="content">
+      <input type="text" placeholder="Busca en OpenLibra" />
+      <button data-inline="true" data-icon="search">Buscar</button>
+      <h2>Recientes</h2>
+      <div id="replacerecents"></div>
+    </div>
+    <div data-role="footer" data-id="toolbar">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#criteriapage" data-icon="bars">Criteria</a></li>
+          <li><a href="#quantitypage" data-icon="grid">Cantidad</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /MAIN PAGE -->
+
+
+  <!-- CRITERIA PAGE -->
+  <!-- Listar busquedas por criterio -->
+  <div data-role="page" id="criteriapage">
+    <div data-role="header">
+      <h1>Busqueda por criteria</h1>
+      <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
+    </div>
+    <div data-role="content">
+      <h2>Mas vistos</h2>
+      <div id="replacemostviewed"></div>
+
+      <h2>Mas comentados</h2>
+      <div id="replacemostcomemented"></div>
+
+      <h2>Mas votados</h2>
+      <div id="replacemostvoted"></div>
+
+    </div>
+    <div data-role="footer" data-id="toolbar">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#mainpage" data-icon="home">Inicio</a></li>
+          <li><a href="#quantitypage" data-icon="grid">Cantidad</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /CRITERIA PAGE -->
+
+
+  <!-- QUANTITY PAGE -->
+  <!-- Listar busquedas listadas por varios tipos en determinada cantidad -->
+  <div data-role="page" id="quantitypage">
+    <div data-role="header">
+      <h1>Busqueda por cantidad</h1>
+      <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
+    </div>
+    <div data-role="content">
+      <h2>Ultimos 10 publicados</h2>
+      <div id="replacelastten"></div>
+
+    </div>
+    <div data-role="footer" data-id="toolbar">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#mainpage" data-icon="home">Inicio</a></li>
+          <li><a href="#criteriapage"data-icon="bars">Criteria</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /QUANTITY PAGE -->
+
+
+  <!-- JAVASCRIPT REQUIRED -->
+
+  <!-- /JAVASCRIPT REQUIRED -->
+
+<!-- OPEN LIBRA JSON LOGIC -->
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+
+    /*Trayendo los 3 mas recientes agregados a open libra para la principal*/
+    $.getJSON("http://www.etnassoft.com/api/v1/get/?since=last_week&num_items=10&callback=?",function(results){
+
+      var booksList = "";
+
+      console.log(results);
+
+      for(var book in results){
+        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
+
+        var bookTitle = results[book].title;
+        var bookAuthor = results[book].author;
+        var bookLanguage = results[book].language;
+        var bookPages = results[book].pages;
+        var bookCover = results[book].cover;
+        console.log(bookCover);
+
+        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
+
+          booksList += "<div>";
+            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<img src="+bookCover+"></img>";
+            booksList += "</div>";
+            booksList += "<div class='booksListInfo'>";
+              booksList += "<p>Autor: "+bookAuthor+"</p>";
+              booksList += "<p>Idioma: "+bookLanguage+"</p>";
+              booksList += "<p>Paginas: "+bookPages+"</p>";
+            booksList += "</div>";
+          booksList += "</div>";
+
+        $("#replacerecents").html(booksList);
+      }
+      // booksList += "</div>";
+      // console.log(html);
+
+
+    });
+
+  });
+
+</script>
+<!-- /OPEN LIBRA JSON LOGIC -->
+
+
+</body>
 </html>
