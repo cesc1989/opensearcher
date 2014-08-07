@@ -1,3 +1,7 @@
+//VARIABLE GLOBLAL PARA ARMAR EL ENLACE
+
+var enlaceAlSitio = "http://www.etnassoft.com/biblioteca/";
+
 // FUNCION OBTENER LOS 5 MAS RECIENTES EN DESARROLLO
 
 function getFiveRecentsDev(){
@@ -18,10 +22,16 @@ function getFiveRecentsDev(){
         var bookCover = results[book].cover;
         //console.log(bookCover);
 
+        //var nuevoTitulo = bookTitle.replace(/\s/g,"-").replace(/ñ/ig,"n").toLowerCase();
+        //console.log(nuevoTitulo);
+        var nuevoTitulo = normalize(bookTitle);
+
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
           booksList += "<div>";
-            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+              booksList +="<h3>"+bookTitle+"</h3>";
+            booksList +="</a>";
             booksList += "<div class='booksListImage'>";
               booksList += "<img src="+bookCover+"></img>";
             booksList += "</div>";
@@ -61,10 +71,16 @@ function getFiveRecentsSchool(){
         var bookCover = results[book].cover;
         //console.log(bookCover);
 
+        //var nuevoTitulo = bookTitle.replace(/\s/g,"-").replace(/ñ/ig,"n").toLowerCase();
+
+        var nuevoTitulo = normalize(bookTitle);
+
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
           booksList += "<div>";
-            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+              booksList +="<h3>"+bookTitle+"</h3>";
+            booksList +="</a>";
             booksList += "<div class='booksListImage'>";
               booksList += "<img src="+bookCover+"></img>";
             booksList += "</div>";
@@ -104,10 +120,14 @@ function getFiveRecentsLaw(){
         var bookCover = results[book].cover;
         //console.log(bookCover);
 
+        var nuevoTitulo = normalize(bookTitle);
+
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
           booksList += "<div>";
-            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+              booksList +="<h3>"+bookTitle+"</h3>";
+            booksList +="</a>";
             booksList += "<div class='booksListImage'>";
               booksList += "<img src="+bookCover+"></img>";
             booksList += "</div>";
@@ -148,10 +168,15 @@ function getTenRecents(){
         var bookCover = results[book].cover;
         //console.log(bookCover);
 
+        var nuevoTitulo = normalize(bookTitle);
+
+
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
           booksList += "<div>";
-            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+              booksList +="<h3>"+bookTitle+"</h3>";
+            booksList +="</a>";
             booksList += "<div class='booksListImage'>";
               booksList += "<img src="+bookCover+"></img>";
             booksList += "</div>";
@@ -191,10 +216,14 @@ function getTenRecents(){
         var bookCover = resultsMostViewed[book].cover;
         // console.log(bookCover);
 
+        var nuevoTitulo = normalize(bookTitle);
+
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
           booksList += "<div>";
-            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+              booksList +="<h3>"+bookTitle+"</h3>";
+            booksList +="</a>";
             booksList += "<div class='booksListImage'>";
               booksList += "<img src="+bookCover+"></img>";
             booksList += "</div>";
@@ -236,10 +265,14 @@ function getTenRecents(){
         var bookCover = resultsMostCommented[book].cover;
         // console.log(bookCover);
 
+        var nuevoTitulo = normalize(bookTitle);
+
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
           booksList += "<div>";
-            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+              booksList +="<h3>"+bookTitle+"</h3>";
+            booksList +="</a>";
             booksList += "<div class='booksListImage'>";
               booksList += "<img src="+bookCover+"></img>";
             booksList += "</div>";
@@ -278,10 +311,14 @@ function getTenRecents(){
         var bookCover = resultsMostVoted[book].cover;
         // console.log(bookCover);
 
+        var nuevoTitulo = normalize(bookTitle);
+
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
           booksList += "<div>";
-            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+              booksList +="<h3>"+bookTitle+"</h3>";
+            booksList +="</a>";
             booksList += "<div class='booksListImage'>";
               booksList += "<img src="+bookCover+"></img>";
             booksList += "</div>";
