@@ -1,21 +1,51 @@
 /*RESETS*/
 
-.bookBox h2,
-.bookBox p{
-	padding: 0px;
-	margin: 6px;
+h2{
+	margin-top: 8px;
 }
 
+.bookBox h3,
+.bookBox p{
+	padding: 0px;
+	margin: 0px;
+}
+
+.bookBox a{
+	text-decoration: none;
+}
 
 /*ESTILO PARA LA CAJA QUE CONTIENE LA INFORMACION DEL LIBRO*/
 
 .bookBox{
 	background-color: #fff;
+	box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+	margin-top: 18px;
+}
+
+.booksListInfo{
+	padding: 4px 0px 4px 8px;
+	margin-top: 6px;
+}
+
+.booksListInfo p{
+	padding-bottom: 4px;
+}
+
+/*ESTILO PARA EL ENLACE Y TITULO DEL LIBRO*/
+
+.bookBox a{
+}
+
+.bookBox h3{
+	background-color: #cdcdcd;
+	margin-top: 4px;
+	padding: 6px 0px 6px 8px;
 }
 
 
 /*ESTILO PARA LAS IMAGENES DE LAS PORTADAS*/
 
 .booksListImage img{
-	box-shadow: 0px 0px 2px rgba(0,0,0,0.6);
+	/*box-shadow: 0px 0px 2px rgba(0,0,0,0.6);*/
+	width: 100%;
 }

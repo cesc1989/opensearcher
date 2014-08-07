@@ -33,12 +33,14 @@ function getFiveRecentsDev(){
               booksList +="<h3>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
-              booksList += "<p>Autor: "+bookAuthor+"</p>";
-              booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Páginas: "+bookPages+"</p>";
+              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
+              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
+              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
             booksList += "</div>";
             booksList += "<div class='booksListImage'>";
-              booksList += "<img src="+bookCover+"></img>";
+              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+                booksList += "<img src="+bookCover+"></img>";
+              booksList +="</a>";
             booksList += "</div>";
           booksList += "</div>";
 
@@ -77,17 +79,19 @@ function getFiveRecentsSchool(){
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
-          booksList += "<div>";
+          booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
               booksList +="<h3>"+bookTitle+"</h3>";
             booksList +="</a>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<img src="+bookCover+"></img>";
-            booksList += "</div>";
             booksList += "<div class='booksListInfo'>";
-              booksList += "<p>Autor: "+bookAuthor+"</p>";
-              booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Páginas: "+bookPages+"</p>";
+              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
+              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
+              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
+            booksList += "</div>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+                booksList += "<img src="+bookCover+"></img>";
+              booksList +="</a>";
             booksList += "</div>";
           booksList += "</div>";
 
@@ -124,17 +128,19 @@ function getFiveRecentsLaw(){
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
-          booksList += "<div>";
+          booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
               booksList +="<h3>"+bookTitle+"</h3>";
             booksList +="</a>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<img src="+bookCover+"></img>";
-            booksList += "</div>";
             booksList += "<div class='booksListInfo'>";
-              booksList += "<p>Autor: "+bookAuthor+"</p>";
-              booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Páginas: "+bookPages+"</p>";
+              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
+              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
+              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
+            booksList += "</div>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+                booksList += "<img src="+bookCover+"></img>";
+              booksList +="</a>";
             booksList += "</div>";
           booksList += "</div>";
 
@@ -173,17 +179,19 @@ function getTenRecents(){
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
-          booksList += "<div>";
+          booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
               booksList +="<h3>"+bookTitle+"</h3>";
             booksList +="</a>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<img src="+bookCover+"></img>";
-            booksList += "</div>";
             booksList += "<div class='booksListInfo'>";
-              booksList += "<p>Autor: "+bookAuthor+"</p>";
-              booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Páginas: "+bookPages+"</p>";
+              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
+              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
+              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
+            booksList += "</div>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+                booksList += "<img src="+bookCover+"></img>";
+              booksList +="</a>";
             booksList += "</div>";
           booksList += "</div>";
 
@@ -220,17 +228,19 @@ function getTenRecents(){
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
-          booksList += "<div>";
+          booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
               booksList +="<h3>"+bookTitle+"</h3>";
             booksList +="</a>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<img src="+bookCover+"></img>";
-            booksList += "</div>";
             booksList += "<div class='booksListInfo'>";
-              booksList += "<p>Autor: "+bookAuthor+"</p>";
-              booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Páginas: "+bookPages+"</p>";
+              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
+              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
+              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
+            booksList += "</div>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+                booksList += "<img src="+bookCover+"></img>";
+              booksList +="</a>";
             booksList += "</div>";
           booksList += "</div>";
 
@@ -269,17 +279,19 @@ function getTenRecents(){
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
-          booksList += "<div>";
+          booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
               booksList +="<h3>"+bookTitle+"</h3>";
             booksList +="</a>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<img src="+bookCover+"></img>";
-            booksList += "</div>";
             booksList += "<div class='booksListInfo'>";
-              booksList += "<p>Autor: "+bookAuthor+"</p>";
-              booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Páginas: "+bookPages+"</p>";
+              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
+              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
+              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
+            booksList += "</div>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+                booksList += "<img src="+bookCover+"></img>";
+              booksList +="</a>";
             booksList += "</div>";
           booksList += "</div>";
 
@@ -315,17 +327,19 @@ function getTenRecents(){
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
-          booksList += "<div>";
+          booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
               booksList +="<h3>"+bookTitle+"</h3>";
             booksList +="</a>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<img src="+bookCover+"></img>";
-            booksList += "</div>";
             booksList += "<div class='booksListInfo'>";
-              booksList += "<p>Autor: "+bookAuthor+"</p>";
-              booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Páginas: "+bookPages+"</p>";
+              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
+              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
+              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
+            booksList += "</div>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+                booksList += "<img src="+bookCover+"></img>";
+              booksList +="</a>";
             booksList += "</div>";
           booksList += "</div>";
 
