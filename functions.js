@@ -30,7 +30,7 @@ function getFiveRecentsDev(){
 
           booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3>"+bookTitle+"</h3>";
+              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorGreen'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
               booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
@@ -81,7 +81,7 @@ function getFiveRecentsSchool(){
 
           booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3>"+bookTitle+"</h3>";
+              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorBlue'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
               booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
@@ -130,7 +130,7 @@ function getFiveRecentsLaw(){
 
           booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3>"+bookTitle+"</h3>";
+              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorOrange'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
               booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
@@ -181,7 +181,7 @@ function getTenRecents(){
 
           booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3>"+bookTitle+"</h3>";
+              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorPink'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
               booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
@@ -230,7 +230,7 @@ function getTenRecents(){
 
           booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3>"+bookTitle+"</h3>";
+              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorYellow'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
               booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
@@ -281,7 +281,7 @@ function getTenRecents(){
 
           booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3>"+bookTitle+"</h3>";
+              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorRed'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
               booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
@@ -329,7 +329,7 @@ function getTenRecents(){
 
           booksList += "<div class=bookBox>";
             booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3>"+bookTitle+"</h3>";
+              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorPurple'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
               booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";

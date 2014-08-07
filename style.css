@@ -36,10 +36,47 @@ h2{
 .bookBox a{
 }
 
-.bookBox h3{
-	background-color: #cdcdcd;
+h3.bookBoxTitleBook{
 	margin-top: 4px;
 	padding: 6px 0px 6px 8px;
+	font-weight: normal;
+}
+
+/*COLORES PARA LOS FONDOS DE LOS TITULOS DE LOS LIBROS*/
+
+.bookBoxTitleBookColorGreen{
+	background-color: #8FC400;
+	color:#fff;
+}
+
+.bookBoxTitleBookColorBlue{
+	background-color: #06AFE2;
+	color:#fff;
+}
+
+.bookBoxTitleBookColorOrange{
+	background-color: #F2B900;
+	color:#fff;
+}
+
+.bookBoxTitleBookColorPink{
+	background-color: #F900DC;
+	color:#fff;
+}
+
+.bookBoxTitleBookColorYellow{
+	background-color: #F7E600;
+	color:#3A4868;
+}
+
+.bookBoxTitleBookColorRed{
+	background-color: #E2391B;
+	color:#fff;
+}
+
+.bookBoxTitleBookColorPurple{
+	background-color: #FF0CDA;
+	color:#fff;
 }
 
 
