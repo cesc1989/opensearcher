@@ -73,3 +73,23 @@ $("#changeToCriteriaFromQ").click(function(){
 	  $.mobile.changePage("#criteriapage", "fade");
 	},4000);
 });
+
+
+//FUNCION PARA CARGAR LOS ELEMENTOS DE LA PRINCIPAL CUANDO SE HACE RELOAD
+
+$("#mainpage").on("pageshow", function(event){
+	//espero dos segundos a que cargue el script
+	setTimeout(function(){
+		getFiveRecentsDev();
+	},2000);
+
+	//espero tres segundos a que cargue el script
+	setTimeout(function(){
+		getFiveRecentsSchool();
+	},3000);
+
+	//espero cuatro segundos a que cargue el script
+	setTimeout(function(){
+		getFiveRecentsLaw();
+	},4000);
+});
