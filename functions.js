@@ -1,4 +1,134 @@
-// FUNCION OBTENER LAS 10 MAS RECIENTES
+// FUNCION OBTENER LOS 5 MAS RECIENTES EN DESARROLLO
+
+function getFiveRecentsDev(){
+  /*traer los 5 mas recientes en la categoria desarrollo_web*/
+  $.getJSON("http://www.etnassoft.com/api/v1/get/?category=desarrollo_web&num_items=5&callback=?",function(results){
+
+    var booksList = "";
+
+      //console.log(results);
+
+      for(var book in results){
+        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
+
+        var bookTitle = results[book].title;
+        var bookAuthor = results[book].author;
+        var bookLanguage = results[book].language;
+        var bookPages = results[book].pages;
+        var bookCover = results[book].cover;
+        //console.log(bookCover);
+
+        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
+
+          booksList += "<div>";
+            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<img src="+bookCover+"></img>";
+            booksList += "</div>";
+            booksList += "<div class='booksListInfo'>";
+              booksList += "<p>Autor: "+bookAuthor+"</p>";
+              booksList += "<p>Idioma: "+bookLanguage+"</p>";
+              booksList += "<p>Páginas: "+bookPages+"</p>";
+            booksList += "</div>";
+          booksList += "</div>";
+
+        $("#replacerecentsDev").html(booksList);
+      }
+      // booksList += "</div>";
+      // console.log(html);
+
+  });
+
+}
+
+// FUNCION OBTENER LOS 5 MAS RECIENTES EN RECURSOS ACADEMICOS
+
+function getFiveRecentsSchool(){
+  /*traer los 5 mas recientes en la categoria textos-academicos-biblioteca*/
+  $.getJSON("http://www.etnassoft.com/api/v1/get/?category=textos-academicos-biblioteca&num_items=5&callback=?",function(results){
+
+    var booksList = "";
+
+      //console.log(results);
+
+      for(var book in results){
+        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
+
+        var bookTitle = results[book].title;
+        var bookAuthor = results[book].author;
+        var bookLanguage = results[book].language;
+        var bookPages = results[book].pages;
+        var bookCover = results[book].cover;
+        //console.log(bookCover);
+
+        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
+
+          booksList += "<div>";
+            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<img src="+bookCover+"></img>";
+            booksList += "</div>";
+            booksList += "<div class='booksListInfo'>";
+              booksList += "<p>Autor: "+bookAuthor+"</p>";
+              booksList += "<p>Idioma: "+bookLanguage+"</p>";
+              booksList += "<p>Páginas: "+bookPages+"</p>";
+            booksList += "</div>";
+          booksList += "</div>";
+
+        $("#replacerecentsSchool").html(booksList);
+      }
+      // booksList += "</div>";
+      // console.log(html);
+
+  });
+
+}
+
+// FUNCION OBTENER LOS 5 MAS RECIENTES EN DESARROLLO
+
+function getFiveRecentsLaw(){
+  /*traer los 5 mas recientes en la categoria libros_aspecotos_legales*/
+  $.getJSON("http://www.etnassoft.com/api/v1/get/?category=libros_aspecotos_legales&num_items=5&callback=?",function(results){
+
+    var booksList = "";
+
+      //console.log(results);
+
+      for(var book in results){
+        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
+
+        var bookTitle = results[book].title;
+        var bookAuthor = results[book].author;
+        var bookLanguage = results[book].language;
+        var bookPages = results[book].pages;
+        var bookCover = results[book].cover;
+        //console.log(bookCover);
+
+        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
+
+          booksList += "<div>";
+            booksList += "<h3>"+bookTitle+"</h3>";
+            booksList += "<div class='booksListImage'>";
+              booksList += "<img src="+bookCover+"></img>";
+            booksList += "</div>";
+            booksList += "<div class='booksListInfo'>";
+              booksList += "<p>Autor: "+bookAuthor+"</p>";
+              booksList += "<p>Idioma: "+bookLanguage+"</p>";
+              booksList += "<p>Páginas: "+bookPages+"</p>";
+            booksList += "</div>";
+          booksList += "</div>";
+
+        $("#replacerecentsLaw").html(booksList);
+      }
+      // booksList += "</div>";
+      // console.log(html);
+
+  });
+
+}
+
+
+// FUNCION OBTENER LAS 10 MAS RECIENTES PARA LA PAGINA CANTIDAD
 
 function getTenRecents(){
     /*Trayendo los 10 mas recientes agregados a open libra para la pagina cantidad*/
@@ -28,7 +158,7 @@ function getTenRecents(){
             booksList += "<div class='booksListInfo'>";
               booksList += "<p>Autor: "+bookAuthor+"</p>";
               booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Paginas: "+bookPages+"</p>";
+              booksList += "<p>Páginas: "+bookPages+"</p>";
             booksList += "</div>";
           booksList += "</div>";
 
@@ -71,7 +201,7 @@ function getTenRecents(){
             booksList += "<div class='booksListInfo'>";
               booksList += "<p>Autor: "+bookAuthor+"</p>";
               booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Paginas: "+bookPages+"</p>";
+              booksList += "<p>Páginas: "+bookPages+"</p>";
             booksList += "</div>";
           booksList += "</div>";
 
@@ -116,7 +246,7 @@ function getTenRecents(){
             booksList += "<div class='booksListInfo'>";
               booksList += "<p>Autor: "+bookAuthor+"</p>";
               booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Paginas: "+bookPages+"</p>";
+              booksList += "<p>Páginas: "+bookPages+"</p>";
             booksList += "</div>";
           booksList += "</div>";
 
@@ -158,7 +288,7 @@ function getTenRecents(){
             booksList += "<div class='booksListInfo'>";
               booksList += "<p>Autor: "+bookAuthor+"</p>";
               booksList += "<p>Idioma: "+bookLanguage+"</p>";
-              booksList += "<p>Paginas: "+bookPages+"</p>";
+              booksList += "<p>Páginas: "+bookPages+"</p>";
             booksList += "</div>";
           booksList += "</div>";
 

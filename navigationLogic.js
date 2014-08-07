@@ -1,6 +1,8 @@
 // Función para hacer efecto de página splash al cargar la aplicación
 $(document).on('pageinit','#splashscreen',function(){
-	getTenRecents();
+	getFiveRecentsDev();
+	getFiveRecentsSchool();
+	getFiveRecentsLaw();
 	setTimeout(function(){
 	  $.mobile.changePage("#mainpage", "fade");
 	}, 3000);
@@ -8,7 +10,9 @@ $(document).on('pageinit','#splashscreen',function(){
 
 // Con esta función, el botón Inicio en Quantity lleva a la principal
 $("#changeToMain").click(function(){
-  
+	getFiveRecentsDev();
+	getFiveRecentsSchool();
+	getFiveRecentsLaw();
   setTimeout(function(){
     console.log("cambiando a la pagina de principal");
     $.mobile.changePage("#mainpage", "fade");
@@ -19,7 +23,9 @@ $("#changeToMain").click(function(){
 // de manera correcta en ambas páginas: quantity y criteria. Solo
 // funcionaba en una de las dos
 $("#changeToMainFromC").click(function(){
-  
+	getFiveRecentsDev();
+	getFiveRecentsSchool();
+	getFiveRecentsLaw();
   setTimeout(function(){
     console.log("cambiando a la pagina de principal");
     $.mobile.changePage("#mainpage", "fade");
