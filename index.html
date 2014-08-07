@@ -7,7 +7,7 @@
   <script type="text/javascript" src="jquery.mobile-1.3.0/jquery-1.9.1.min.js"></script>
   <script type="text/javascript" src="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="jquery.mobile-1.3.0/jquery.mobile-1.3.0.min.css" />
-  <title>Open Searcher</title>
+  <title>Open Searcher | El Buscador de OpenLibra</title>
 </head>
 <body>
 
@@ -32,14 +32,14 @@
     <div data-role="content">
       <input type="text" placeholder="Busca en OpenLibra" />
       <button data-inline="true" data-icon="search">Buscar</button>
-      <h2>Recientes</h2>
+      <h2>Recién subidos</h2>
       <div id="replacerecents"></div>
     </div>
     <div data-role="footer" data-id="toolbar">
       <div data-role="navbar">
         <ul>
-          <li><a href="#" id="changeToCriteria" data-icon="bars">Criteria</a></li>
-          <li><a href="#" id="changeToQuantity" data-icon="grid">Cantidad</a></li>
+          <li><a href="#" id="changeToCriteria" data-icon="bars">Revisa por Criteria</a></li>
+          <li><a href="#" id="changeToQuantity" data-icon="grid">Revisa por Cantidad</a></li>
         </ul>
       </div>
     </div>
@@ -60,54 +60,23 @@
   </div>
   <!-- /ABOUT PAGE -->
 
-
-  <!-- CRITERIA PAGE -->
-  <!-- Listar busquedas por criterio -->
-  <div data-role="page" id="criteriapage">
-    <div data-role="header">
-      <h1>Busqueda por criteria</h1>
-      <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
-    </div>
-    <div data-role="content">
-      <h2>Mas vistos</h2>
-      <div id="replacemostviewed"></div>
-
-      <h2>Mas comentados</h2>
-      <div id="replacemostcommented"></div>
-
-      <h2>Mas votados</h2>
-      <div id="replacemostvoted"></div>
-
-    </div>
-    <div data-role="footer" data-id="toolbar">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#" id="changeToMain" data-icon="home">Inicio</a></li>
-          <li><a href="#" id="changeToQuantity" data-icon="grid">Cantidad</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- /CRITERIA PAGE -->
-
-
   <!-- QUANTITY PAGE -->
   <!-- Listar busquedas listadas por varios tipos en determinada cantidad -->
   <div data-role="page" id="quantitypage">
     <div data-role="header">
-      <h1>Busqueda por cantidad</h1>
+      <h1>Búsqueda por cantidad</h1>
       <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
     </div>
     <div data-role="content">
-      <h2>Ultimos 10 publicados</h2>
+      <h2>Últimos 10 publicados</h2>
       <div id="replacelastten"></div>
 
     </div>
     <div data-role="footer" data-id="toolbar">
       <div data-role="navbar">
         <ul>
-          <li><a href="#" id="changeToMain" data-icon="home">Inicio</a></li>
-          <li><a href="#" id="changeToCriteria" data-icon="bars">Criteria</a></li>
+          <li><a href="#" id="changeToMain" data-icon="home">Regresa al Inicio</a></li>
+          <li><a href="#" id="changeToCriteriaFromQ" data-icon="bars">Revisa por Criteria</a></li>
         </ul>
       </div>
     </div>
@@ -115,9 +84,39 @@
   <!-- /QUANTITY PAGE -->
 
 
+  <!-- CRITERIA PAGE -->
+  <!-- Listar busquedas por criterio -->
+  <div data-role="page" id="criteriapage">
+    <div data-role="header">
+      <h1>Búsqueda por criteria</h1>
+      <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
+    </div>
+    <div data-role="content">
+      <h2>Los Más vistos</h2>
+      <div id="replacemostviewed"></div>
+
+      <h2>Los Más comentados</h2>
+      <div id="replacemostcommented"></div>
+
+      <h2>Los Más votados</h2>
+      <div id="replacemostvoted"></div>
+
+    </div>
+    <div data-role="footer" data-id="toolbar">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#" id="changeToMainFromC" data-icon="home">Volver al Inicio</a></li>
+          <li><a href="#" id="changeToQuantityFromC" data-icon="grid">Revisa por Cantidad</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /CRITERIA PAGE -->
+
+
   <!-- JAVASCRIPT REQUIRED -->
-  <script type="text/javascript" src="navigationLogic.js"></script>
   <script type="text/javascript" src="functions.js"></script>
+  <script type="text/javascript" src="navigationLogic.js"></script>
   <!-- /JAVASCRIPT REQUIRED -->
 
 </body>

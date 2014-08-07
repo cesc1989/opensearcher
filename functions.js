@@ -1,8 +1,8 @@
 // FUNCION OBTENER LAS 10 MAS RECIENTES
 
 function getTenRecents(){
-    /*Trayendo los 3 mas recientes agregados a open libra para la principal*/
-    $.getJSON("http://www.etnassoft.com/api/v1/get/?since=last_week&num_items=10&callback=?",function(results){
+    /*Trayendo los 10 mas recientes agregados a open libra para la pagina cantidad*/
+    $.getJSON("http://www.etnassoft.com/api/v1/get/?since=last_month&num_items=10&callback=?",function(results){
 
       var booksList = "";
 
@@ -32,7 +32,7 @@ function getTenRecents(){
             booksList += "</div>";
           booksList += "</div>";
 
-        $("#replacerecents").html(booksList);
+        $("#replacelastten").html(booksList);
       }
       // booksList += "</div>";
       // console.log(html);
