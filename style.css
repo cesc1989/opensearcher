@@ -14,6 +14,13 @@ h2{
 	text-decoration: none;
 }
 
+/*ESTILO PARA EL LOGO EN LA SPLASH SCREEN*/
+
+.logo{
+	margin-top: 20%;
+	width: 100%;
+}
+
 /*ESTILO PARA LA CAJA QUE CONTIENE LA INFORMACION DEL LIBRO*/
 
 .bookBox{
