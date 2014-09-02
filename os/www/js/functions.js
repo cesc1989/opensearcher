@@ -29,7 +29,7 @@ function getFiveRecentsDev(){
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
 
           booksList += "<div class=bookBox>";
-            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+            booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_blank','location=yes')>";
               booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorGreen'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
