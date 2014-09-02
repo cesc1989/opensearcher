@@ -23,10 +23,11 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="20" />
     <preference name="android-installLocation" value="auto" />
-    <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="org.apache.cordova.console" version="0.2.7" />
+    <gap:plugin name="org.apache.cordova.device" version="0.2.8" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
+    <gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
+
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="res/icon/android/icon-48-mdpi.png" />
