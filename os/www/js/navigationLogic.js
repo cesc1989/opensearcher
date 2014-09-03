@@ -93,3 +93,27 @@ $("#mainpage").on("pageshow", function(event){
 		getFiveRecentsLaw();
 	},4000);
 });
+
+$("#quantitypage").on("pageshow", function(event){
+	//espero dos segundos a que cargue el script
+	setTimeout(function(){
+		getTenRecents();
+	},4000);
+});
+
+$("#criteriapage").on("pageshow", function(event){
+	//espero dos segundos a que cargue el script
+	setTimeout(function(){
+		getMostViewed();
+	},2300);
+
+	//espero tres segundos a que cargue el script
+	setTimeout(function(){
+		getMostCommented();
+	},3200);
+
+	//espero cuatro segundos a que cargue el script
+	setTimeout(function(){
+		getMostVoted();
+	},4100);
+});
