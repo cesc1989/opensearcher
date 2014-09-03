@@ -28,7 +28,7 @@ function paintBooks(booksResults, placeToDraw, titleColor){
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
           booksList += "<div class=bookBox>";
-            booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_blank','location=system')>";
+            booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_system','location=no')>";
               booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColor"+titleColor+"'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
@@ -37,7 +37,7 @@ function paintBooks(booksResults, placeToDraw, titleColor){
               booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
             booksList += "</div>";
             booksList += "<div class='booksListImage'>";
-              booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_blank','location=system')>";
+              booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_system','location=no')>";
                 booksList += "<img src="+bookCover+"></img>";
               booksList +="</a>";
             booksList += "</div>";
