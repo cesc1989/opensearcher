@@ -19,20 +19,32 @@ function paintBooks(booksResults, placeToDraw, titleColor){
         var bookPages = booksResults[book].pages;
         var bookCover = booksResults[book].cover;
         
-        //console.log(bookCover);
-        //console.log(nuevoTitulo);
         
         //limpieza de las urls para que sean navegables y quitar caracteres
         //extranhos como tildes, y otros
-        var nuevoTitulo = normalize(bookTitle);
+        var tituloSucio = normalize(bookTitle);
+
+        //reduzco el tamanho del titulo para no romper el disenho
+        if(bookTitle.length > 25) {
+            var nuevoTitulo = bookTitle.substring(0,52)+"...";
+        }else{
+          var nuevoTitulo = bookTitle;
+        }
+
+        //reduzco el tamanho del autor del libro para no romper el disenho
+        if(bookAuthor.length > 25){
+          var autores = bookAuthor.substring(0,26)+"...";
+        }else{
+          var autores = bookAuthor;
+        }
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
           booksList += "<div class=bookBox>";
             booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_system','location=no')>";
-              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColor"+titleColor+"'>"+bookTitle+"</h3>";
+              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColor"+titleColor+"'>"+nuevoTitulo+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
-              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
+              booksList += "<p><strong>Autor:</strong> "+autores+"</p>";
               booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
               booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
             booksList += "</div>";
@@ -46,8 +58,6 @@ function paintBooks(booksResults, placeToDraw, titleColor){
         //escribo el resultado del JSON en el lugar correspondiente
         $(placeToDraw).html(booksList);
       }
-      // booksList += "</div>";
-      // console.log(html);
 }
 
 // FUNCION OBTENER LOS 5 MAS RECIENTES EN DESARROLLO
@@ -130,7 +140,7 @@ function getTenRecents(){
 
   function getMostViewed(){
     /*Trayendo los mas vistos para la criteria*/
-    $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_viewed&num_items=2&callback=?",function(resultsMostViewed){
+    $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_viewed&num_items=5&callback=?",function(resultsMostViewed){
 
       //variable para determinar el sitio donde se dibujaran los valores
       place = "#replacemostviewed";
@@ -151,7 +161,7 @@ function getTenRecents(){
   function getMostCommented(){
 
     /*Trayendo los mas comentados para la criteria*/
-    $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_commented&num_items=3&order=z_a&callback=?",function(resultsMostCommented){
+    $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_commented&num_items=5&order=z_a&callback=?",function(resultsMostCommented){
 
       //variable para determinar el sitio donde se dibujaran los valores
       place = "#replacemostcommented";
@@ -170,7 +180,7 @@ function getTenRecents(){
 // FUNCION OBTENER LAS MAS VOTADAS
   function getMostVoted(){
     /*Trayendo los mas comentados para la criteria*/
-    $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_voted&num_items=4&callback=?",function(resultsMostVoted){
+    $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_voted&num_items=5&callback=?",function(resultsMostVoted){
 
       //variable para determinar el sitio donde se dibujaran los valores
       place = "#replacemostvoted";

@@ -30,25 +30,31 @@
       mostrar los mas recientes libros publicados en open libra -->
       <div data-role="page" id="mainpage">
         <div data-role="header">
-          <h1>Principal</h1>
-          <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
+          <h1>Libros en Open Libra</h1>
+          <a href="#aboutpage" data-icon="info" class="ui-btn-right">Info.</a>
         </div>
         <div data-role="content">
-          <h2>Recién subidos en Programación</h2>
+          <div class="clear">
+            <h2>Libros recién subidos en <em>Programación</em></h2>
+          </div>
           <div id="replacerecentsDev"></div>
 
-          <h2>Recién subidos en Recursos Académicos</h2>
+          <div class="clear">
+            <h2>Libros recién subidos en <em>Recursos Académicos</em></h2>
+          </div>
           <div id="replacerecentsSchool"></div>
 
-          <h2>Recién subidos en Leyes</h2>
+          <div class="clear">
+            <h2>Libros recién subidos en <em>Leyes</em></h2>
+          </div>
           <div id="replacerecentsLaw"></div>
 
         </div>
         <div data-role="footer" data-id="toolbar">
           <div data-role="navbar">
             <ul>
-              <li><a href="#" id="changeToCriteria" data-icon="bars">Revisar por Criteria</a></li>
-              <li><a href="#" id="changeToQuantity" data-icon="grid">Revisar por Cantidad</a></li>
+              <li><a href="#" id="changeToCriteria" data-icon="bars">Ver libros por Criteria</a></li>
+              <li><a href="#" id="changeToQuantity" data-icon="grid">Ver libros por Cantidad</a></li>
             </ul>
           </div>
         </div>
@@ -67,7 +73,7 @@
           <p>Con esta aplicación podrás conocer los libros más recientes cargados a la librería en línea <strong>Open Libra</strong>.</p>
           <p>Próximamente estaré publicando más actualizaciones entre las cuales están</p>
           <ul>
-            <li>Diseño adaptado a Tabletas.</li>
+            <li><strike>Diseño adaptado a Tabletas.</strike></li>
             <li><strike>Optimización en la carga de los libros.</strike></li>
             <li>Poder buscar desde esta aplicación libros en toda la biblioteca.</li>
           </ul>
@@ -80,11 +86,13 @@
       <!-- Listar busquedas listadas por varios tipos en determinada cantidad -->
       <div data-role="page" id="quantitypage">
         <div data-role="header">
-          <h1>Búsqueda por cantidad</h1>
-          <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
+          <h1>Resultados por cantidad</h1>
+          <a href="#aboutpage" data-icon="info" class="ui-btn-right">Info.</a>
         </div>
         <div data-role="content">
-          <h2>Últimos 10 publicados</h2>
+          <div class="clear">
+            <h2>Últimos 10 libros publicados</h2>
+          </div>
           <div id="replacelastten"></div>
 
         </div>
@@ -92,7 +100,7 @@
           <div data-role="navbar">
             <ul>
               <li><a href="#" id="changeToMain" data-icon="home">Regresa al Inicio</a></li>
-              <li><a href="#" id="changeToCriteriaFromQ" data-icon="bars">Revisar por Criteria</a></li>
+              <li><a href="#" id="changeToCriteriaFromQ" data-icon="bars">Ver libros por Criteria</a></li>
             </ul>
           </div>
         </div>
@@ -104,17 +112,23 @@
       <!-- Listar busquedas por criterio -->
       <div data-role="page" id="criteriapage">
         <div data-role="header">
-          <h1>Búsqueda por criteria</h1>
-          <a href="#aboutpage" data-icon="info" class="ui-btn-right">Acerca</a>
+          <h1>Resultados por criteria</h1>
+          <a href="#aboutpage" data-icon="info" class="ui-btn-right">Info.</a>
         </div>
         <div data-role="content">
-          <h2>Los Más vistos</h2>
+          <div class="clear">
+            <h2>Los libros <em>Más vistos</em></h2>
+          </div>
           <div id="replacemostviewed"></div>
 
-          <h2>Los Más comentados</h2>
+          <div class="clear">
+            <h2>Los libros <em>Más comentados</em></h2>
+          </div>
           <div id="replacemostcommented"></div>
 
-          <h2>Los Más votados</h2>
+          <div class="clear">
+            <h2>Los libros <em>Más votados</em></h2>
+          </div>
           <div id="replacemostvoted"></div>
 
         </div>
@@ -122,7 +136,7 @@
           <div data-role="navbar">
             <ul>
               <li><a href="#" id="changeToMainFromC" data-icon="home">Volver al Inicio</a></li>
-              <li><a href="#" id="changeToQuantityFromC" data-icon="grid">Revisar por Cantidad</a></li>
+              <li><a href="#" id="changeToQuantityFromC" data-icon="grid">Ver libros por Cantidad</a></li>
             </ul>
           </div>
         </div>
