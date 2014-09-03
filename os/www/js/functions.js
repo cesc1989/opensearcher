@@ -2,35 +2,34 @@
 
 var enlaceAlSitio = "http://www.etnassoft.com/biblioteca/";
 
-// FUNCION OBTENER LOS 5 MAS RECIENTES EN DESARROLLO
-
-function getFiveRecentsDev(){
-  /*traer los 5 mas recientes en la categoria desarrollo_web*/
-  $.getJSON("http://www.etnassoft.com/api/v1/get/?category=desarrollo_web&num_items=5&callback=?",function(results){
-
-    var booksList = "";
-
+function paintBooks(booksResults, placeToDraw, titleColor){
+  
+  //variable que contendra todos los elementos del JSON
+  var booksList = "";
+      
       //console.log(results);
 
-      for(var book in results){
+      //inicio a recorrer el JSON
+      for(var book in booksResults){
+        
         // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
-
-        var bookTitle = results[book].title;
-        var bookAuthor = results[book].author;
-        var bookLanguage = results[book].language;
-        var bookPages = results[book].pages;
-        var bookCover = results[book].cover;
+        var bookTitle = booksResults[book].title;
+        var bookAuthor = booksResults[book].author;
+        var bookLanguage = booksResults[book].language;
+        var bookPages = booksResults[book].pages;
+        var bookCover = booksResults[book].cover;
+        
         //console.log(bookCover);
-
-        //var nuevoTitulo = bookTitle.replace(/\s/g,"-").replace(/ñ/ig,"n").toLowerCase();
         //console.log(nuevoTitulo);
+        
+        //limpieza de las urls para que sean navegables y quitar caracteres
+        //extranhos como tildes, y otros
         var nuevoTitulo = normalize(bookTitle);
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
-
           booksList += "<div class=bookBox>";
-            booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_blank','location=yes')>";
-              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorGreen'>"+bookTitle+"</h3>";
+            booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_blank','location=system')>";
+              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColor"+titleColor+"'>"+bookTitle+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
               booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
@@ -38,19 +37,35 @@ function getFiveRecentsDev(){
               booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
             booksList += "</div>";
             booksList += "<div class='booksListImage'>";
-              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
+              booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_blank','location=system')>";
                 booksList += "<img src="+bookCover+"></img>";
               booksList +="</a>";
             booksList += "</div>";
           booksList += "</div>";
-
-        $("#replacerecentsDev").html(booksList);
+        
+        //escribo el resultado del JSON en el lugar correspondiente
+        $(placeToDraw).html(booksList);
       }
       // booksList += "</div>";
       // console.log(html);
+}
+
+// FUNCION OBTENER LOS 5 MAS RECIENTES EN DESARROLLO
+
+function getFiveRecentsDev(){
+  /*traer los 5 mas recientes en la categoria desarrollo_web*/
+  $.getJSON("http://www.etnassoft.com/api/v1/get/?category=desarrollo_web&num_items=5&callback=?",function(results){
+    
+    //variable para determinar el sitio donde se dibujaran los valores
+    place = "#replacerecentsDev";
+
+    //variable para determinar el color que tendra el bloque del titulo del libro
+    color="Green";
+
+    //llamado a la funcion que se encarga de pintar los elementos en el html
+    paintBooks(results,place,color);
 
   });
-
 }
 
 // FUNCION OBTENER LOS 5 MAS RECIENTES EN RECURSOS ACADEMICOS
@@ -58,47 +73,15 @@ function getFiveRecentsDev(){
 function getFiveRecentsSchool(){
   /*traer los 5 mas recientes en la categoria textos-academicos-biblioteca*/
   $.getJSON("http://www.etnassoft.com/api/v1/get/?category=textos-academicos-biblioteca&num_items=5&callback=?",function(results){
+    
+    //variable para determinar el sitio donde se dibujaran los valores
+    place = "#replacerecentsSchool";
+    
+    //variable para determinar el color que tendra el bloque del titulo del libro
+    color="Blue";
 
-    var booksList = "";
-
-      //console.log(results);
-
-      for(var book in results){
-        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
-
-        var bookTitle = results[book].title;
-        var bookAuthor = results[book].author;
-        var bookLanguage = results[book].language;
-        var bookPages = results[book].pages;
-        var bookCover = results[book].cover;
-        //console.log(bookCover);
-
-        //var nuevoTitulo = bookTitle.replace(/\s/g,"-").replace(/ñ/ig,"n").toLowerCase();
-
-        var nuevoTitulo = normalize(bookTitle);
-
-        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
-
-          booksList += "<div class=bookBox>";
-            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorBlue'>"+bookTitle+"</h3>";
-            booksList +="</a>";
-            booksList += "<div class='booksListInfo'>";
-              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
-              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
-              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
-            booksList += "</div>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-                booksList += "<img src="+bookCover+"></img>";
-              booksList +="</a>";
-            booksList += "</div>";
-          booksList += "</div>";
-
-        $("#replacerecentsSchool").html(booksList);
-      }
-      // booksList += "</div>";
-      // console.log(html);
+    //llamado a la funcion que se encarga de pintar los elementos en el html
+    paintBooks(results,place,color);
 
   });
 
@@ -109,45 +92,15 @@ function getFiveRecentsSchool(){
 function getFiveRecentsLaw(){
   /*traer los 5 mas recientes en la categoria libros_aspecotos_legales*/
   $.getJSON("http://www.etnassoft.com/api/v1/get/?category=libros_aspecotos_legales&num_items=5&callback=?",function(results){
-
-    var booksList = "";
-
-      //console.log(results);
-
-      for(var book in results){
-        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
-
-        var bookTitle = results[book].title;
-        var bookAuthor = results[book].author;
-        var bookLanguage = results[book].language;
-        var bookPages = results[book].pages;
-        var bookCover = results[book].cover;
-        //console.log(bookCover);
-
-        var nuevoTitulo = normalize(bookTitle);
-
-        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
-
-          booksList += "<div class=bookBox>";
-            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorOrange'>"+bookTitle+"</h3>";
-            booksList +="</a>";
-            booksList += "<div class='booksListInfo'>";
-              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
-              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
-              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
-            booksList += "</div>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-                booksList += "<img src="+bookCover+"></img>";
-              booksList +="</a>";
-            booksList += "</div>";
-          booksList += "</div>";
-
-        $("#replacerecentsLaw").html(booksList);
-      }
-      // booksList += "</div>";
-      // console.log(html);
+    
+    //variable para determinar el sitio donde se dibujaran los valores
+    place = "#replacerecentsLaw";
+    
+    //variable para determinar el color que tendra el bloque del titulo del libro
+    color="Orange";
+    
+    //llamado a la funcion que se encarga de pintar los elementos en el html
+    paintBooks(results,place,color);
 
   });
 
@@ -159,46 +112,15 @@ function getFiveRecentsLaw(){
 function getTenRecents(){
     /*Trayendo los 10 mas recientes agregados a open libra para la pagina cantidad*/
     $.getJSON("http://www.etnassoft.com/api/v1/get/?since=last_month&num_items=10&callback=?",function(results){
-
-      var booksList = "";
-
-      //console.log(results);
-
-      for(var book in results){
-        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
-
-        var bookTitle = results[book].title;
-        var bookAuthor = results[book].author;
-        var bookLanguage = results[book].language;
-        var bookPages = results[book].pages;
-        var bookCover = results[book].cover;
-        //console.log(bookCover);
-
-        var nuevoTitulo = normalize(bookTitle);
-
-
-        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
-
-          booksList += "<div class=bookBox>";
-            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorPink'>"+bookTitle+"</h3>";
-            booksList +="</a>";
-            booksList += "<div class='booksListInfo'>";
-              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
-              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
-              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
-            booksList += "</div>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-                booksList += "<img src="+bookCover+"></img>";
-              booksList +="</a>";
-            booksList += "</div>";
-          booksList += "</div>";
-
-        $("#replacelastten").html(booksList);
-      }
-      // booksList += "</div>";
-      // console.log(html);
+      
+      //variable para determinar el sitio donde se dibujaran los valores
+      place = "#replacelastten";
+      
+      //variable para determinar el color que tendra el bloque del titulo del libro
+      color="Pink";
+      
+      //llamado a la funcion que se encarga de pintar los elementos en el html
+      paintBooks(results,place,color);
 
     });
 
@@ -210,44 +132,14 @@ function getTenRecents(){
     /*Trayendo los mas vistos para la criteria*/
     $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_viewed&num_items=2&callback=?",function(resultsMostViewed){
 
-      var booksList = "";
-
-      //console.log(resultsMostViewed);
-
-      for(var book in resultsMostViewed){
-        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
-
-        var bookTitle = resultsMostViewed[book].title;
-        var bookAuthor = resultsMostViewed[book].author;
-        var bookLanguage = resultsMostViewed[book].language;
-        var bookPages = resultsMostViewed[book].pages;
-        var bookCover = resultsMostViewed[book].cover;
-        // console.log(bookCover);
-
-        var nuevoTitulo = normalize(bookTitle);
-
-        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
-
-          booksList += "<div class=bookBox>";
-            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorYellow'>"+bookTitle+"</h3>";
-            booksList +="</a>";
-            booksList += "<div class='booksListInfo'>";
-              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
-              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
-              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
-            booksList += "</div>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-                booksList += "<img src="+bookCover+"></img>";
-              booksList +="</a>";
-            booksList += "</div>";
-          booksList += "</div>";
-
-        $("#replacemostviewed").html(booksList);
-      }
-      // booksList += "</div>";
-      // console.log(html);
+      //variable para determinar el sitio donde se dibujaran los valores
+      place = "#replacemostviewed";
+      
+      //variable para determinar el color que tendra el bloque del titulo del libro
+      color="Yellow";
+      
+      //llamado a la funcion que se encarga de pintar los elementos en el html
+      paintBooks(resultsMostViewed,place,color);
 
     });
 
@@ -261,44 +153,15 @@ function getTenRecents(){
     /*Trayendo los mas comentados para la criteria*/
     $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_commented&num_items=3&order=z_a&callback=?",function(resultsMostCommented){
 
-      var booksList = "";
+      //variable para determinar el sitio donde se dibujaran los valores
+      place = "#replacemostcommented";
+      
+      //variable para determinar el color que tendra el bloque del titulo del libro
+      color="Red";
+      
+      //llamado a la funcion que se encarga de pintar los elementos en el html
+      paintBooks(resultsMostCommented,place,color);
 
-      //console.log(resultsMostCommented);
-
-      for(var book in resultsMostCommented){
-        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
-
-        var bookTitle = resultsMostCommented[book].title;
-        var bookAuthor = resultsMostCommented[book].author;
-        var bookLanguage = resultsMostCommented[book].language;
-        var bookPages = resultsMostCommented[book].pages;
-        var bookCover = resultsMostCommented[book].cover;
-        // console.log(bookCover);
-
-        var nuevoTitulo = normalize(bookTitle);
-
-        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
-
-          booksList += "<div class=bookBox>";
-            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorRed'>"+bookTitle+"</h3>";
-            booksList +="</a>";
-            booksList += "<div class='booksListInfo'>";
-              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
-              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
-              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
-            booksList += "</div>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-                booksList += "<img src="+bookCover+"></img>";
-              booksList +="</a>";
-            booksList += "</div>";
-          booksList += "</div>";
-
-        $("#replacemostcommented").html(booksList);
-      }
-      // booksList += "</div>";
-      // console.log(html);
     });
 
   }
@@ -309,44 +172,15 @@ function getTenRecents(){
     /*Trayendo los mas comentados para la criteria*/
     $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_voted&num_items=4&callback=?",function(resultsMostVoted){
 
-      var booksList = "";
+      //variable para determinar el sitio donde se dibujaran los valores
+      place = "#replacemostvoted";
+      
+      //variable para determinar el color que tendra el bloque del titulo del libro
+      color="Purple";
+      
+      //llamado a la funcion que se encarga de pintar los elementos en el html
+      paintBooks(resultsMostVoted,place,color);
 
-      //console.log(resultsMostVoted);
-
-      for(var book in resultsMostVoted){
-        // ASIGNO LOS VALORES A USAR A VARIABLES INDEPENDIENTES
-
-        var bookTitle = resultsMostVoted[book].title;
-        var bookAuthor = resultsMostVoted[book].author;
-        var bookLanguage = resultsMostVoted[book].language;
-        var bookPages = resultsMostVoted[book].pages;
-        var bookCover = resultsMostVoted[book].cover;
-        // console.log(bookCover);
-
-        var nuevoTitulo = normalize(bookTitle);
-
-        // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
-
-          booksList += "<div class=bookBox>";
-            booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-              booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColorPurple'>"+bookTitle+"</h3>";
-            booksList +="</a>";
-            booksList += "<div class='booksListInfo'>";
-              booksList += "<p><strong>Autor:</strong> "+bookAuthor+"</p>";
-              booksList += "<p><strong>Idioma:</strong> "+bookLanguage+"</p>";
-              booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
-            booksList += "</div>";
-            booksList += "<div class='booksListImage'>";
-              booksList += "<a href="+enlaceAlSitio+nuevoTitulo+" target=_blank>";
-                booksList += "<img src="+bookCover+"></img>";
-              booksList +="</a>";
-            booksList += "</div>";
-          booksList += "</div>";
-
-        $("#replacemostvoted").html(booksList);
-      }
-      // booksList += "</div>";
-      // console.log(html);
     });
 
   }
