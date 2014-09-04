@@ -22,7 +22,7 @@ function paintBooks(booksResults, placeToDraw, titleColor){
         
         //limpieza de las urls para que sean navegables y quitar caracteres
         //extranhos como tildes, y otros
-        var tituloSucio = normalize(bookTitle);
+        var longTitle = normalize(bookTitle);
 
         //reduzco el tamanho del titulo para no romper el disenho
         if(bookTitle.length > 25) {
@@ -40,7 +40,7 @@ function paintBooks(booksResults, placeToDraw, titleColor){
 
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
           booksList += "<div class=bookBox>";
-            booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_system','location=no')>";
+            booksList += "<a onclick=window.open('"+enlaceAlSitio+longTitle+"','_system','location=no')>";
               booksList +="<h3 class='bookBoxTitleBook  bookBoxTitleBookColor"+titleColor+"'>"+nuevoTitulo+"</h3>";
             booksList +="</a>";
             booksList += "<div class='booksListInfo'>";
@@ -49,7 +49,7 @@ function paintBooks(booksResults, placeToDraw, titleColor){
               booksList += "<p><strong>Páginas:</strong> "+bookPages+"</p>";
             booksList += "</div>";
             booksList += "<div class='booksListImage'>";
-              booksList += "<a onclick=window.open('"+enlaceAlSitio+nuevoTitulo+"','_system','location=no')>";
+              booksList += "<a onclick=window.open('"+enlaceAlSitio+longTitle+"','_system','location=no')>";
                 booksList += "<img src="+bookCover+"></img>";
               booksList +="</a>";
             booksList += "</div>";
