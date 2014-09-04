@@ -1,8 +1,8 @@
 // Función para hacer efecto de página splash al cargar la aplicación
 $(document).on('pageinit','#splashscreen',function(){
-	getFiveRecentsDev();
-	getFiveRecentsSchool();
-	getFiveRecentsLaw();
+	// getFiveRecentsDev();
+	// getFiveRecentsSchool();
+	// getFiveRecentsLaw();
 	setTimeout(function(){
 	  $.mobile.changePage("#mainpage", "fade");
 	}, 3000);
@@ -10,9 +10,9 @@ $(document).on('pageinit','#splashscreen',function(){
 
 // Con esta función, el botón Inicio en Quantity lleva a la principal
 $("#changeToMain").click(function(){
-	getFiveRecentsDev();
-	getFiveRecentsSchool();
-	getFiveRecentsLaw();
+	// getFiveRecentsDev();
+	// getFiveRecentsSchool();
+	// getFiveRecentsLaw();
   setTimeout(function(){
     console.log("cambiando a la pagina de principal");
     $.mobile.changePage("#mainpage", "fade");
@@ -23,9 +23,9 @@ $("#changeToMain").click(function(){
 // de manera correcta en ambas páginas: quantity y criteria. Solo
 // funcionaba en una de las dos
 $("#changeToMainFromC").click(function(){
-	getFiveRecentsDev();
-	getFiveRecentsSchool();
-	getFiveRecentsLaw();
+	// getFiveRecentsDev();
+	// getFiveRecentsSchool();
+	// getFiveRecentsLaw();
   setTimeout(function(){
     console.log("cambiando a la pagina de principal");
     $.mobile.changePage("#mainpage", "fade");
@@ -33,7 +33,7 @@ $("#changeToMainFromC").click(function(){
 });
 
 $("#changeToQuantity").click(function(){
-	getTenRecents();
+	// getTenRecents();
   setTimeout(function(){
     console.log("cambiando a la pagina de cantidad");
     $.mobile.changePage("#quantitypage", "fade");
@@ -44,7 +44,7 @@ $("#changeToQuantity").click(function(){
 // de manera correcta en ambas páginas: quantity y criteria. Solo
 // funcionaba en una de las dos
 $("#changeToQuantityFromC").click(function(){
-	getTenRecents();
+	// getTenRecents();
   setTimeout(function(){
     console.log("cambiando a la pagina de cantidad desde criteria");
     $.mobile.changePage("#quantitypage", "fade");
@@ -52,9 +52,9 @@ $("#changeToQuantityFromC").click(function(){
 });
 
 $("#changeToCriteria").click(function(){
-	getMostViewed();
-	getMostCommented();
-	getMostVoted();
+	// getMostViewed();
+	// getMostCommented();
+	// getMostVoted();
 	setTimeout(function(){
 		console.log("cambiando a la pagina de criteria");
 	  $.mobile.changePage("#criteriapage", "fade");
@@ -65,9 +65,9 @@ $("#changeToCriteria").click(function(){
 // de manera correcta en ambas páginas: quantity y criteria. Solo
 // funcionaba en una de las dos
 $("#changeToCriteriaFromQ").click(function(){
-	getMostViewed();
-	getMostCommented();
-	getMostVoted();
+	// getMostViewed();
+	// getMostCommented();
+	// getMostVoted();
 	setTimeout(function(){
 		console.log("cambiando a la pagina de criteria desde cantidad");
 	  $.mobile.changePage("#criteriapage", "fade");

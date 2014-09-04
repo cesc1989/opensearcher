@@ -2,12 +2,40 @@
 
 var enlaceAlSitio = "http://www.etnassoft.com/biblioteca/";
 
+var url = "http://www.etnassoft.com/api/v1/get/";
+
+//DIBUJAR PARA RESULTADOS DE BUSQUEDA
+function paintSearchResults(booksFromTerm){
+
+  //variable que contendra todos los elementos del JSON
+  var booksList = "";
+  booksList += "<h4>Resultados</h4>"
+
+  //inicio del recorrido sobre el JSON
+  for(var bookResult in booksFromTerm){
+
+    //asigno los valores a usar en variables independientes
+    var bookTitle = booksFromTerm[bookResult].title;
+    // console.log("Titulo del libro encontrado: "+bookTitle);
+    var longTitle = normalize(bookTitle);
+    
+    booksList += "<ul>";
+      booksList += "<li>";
+        booksList += "<a onclick=window.open('"+enlaceAlSitio+longTitle+"','_system','location=no')>"+bookTitle+"</a>";
+      booksList += "</li>";
+    booksList += "</ul>";
+
+
+    $("#panel-content").html(booksList);
+  }
+
+}
+
+//DIBUJAR RESULTADOS PARA CATEGORIAS, CRITERIOS Y CANTIDAD
 function paintBooks(booksResults, placeToDraw, titleColor){
   
   //variable que contendra todos los elementos del JSON
   var booksList = "";
-      
-      //console.log(results);
 
       //inicio a recorrer el JSON
       for(var book in booksResults){
@@ -64,7 +92,7 @@ function paintBooks(booksResults, placeToDraw, titleColor){
 
 function getFiveRecentsDev(){
   /*traer los 5 mas recientes en la categoria desarrollo_web*/
-  $.getJSON("http://www.etnassoft.com/api/v1/get/?category=desarrollo_web&num_items=5&callback=?",function(results){
+  $.getJSON(url+"?category=desarrollo_web&num_items=5&callback=?",function(results){
     
     //variable para determinar el sitio donde se dibujaran los valores
     place = "#replacerecentsDev";
@@ -82,7 +110,7 @@ function getFiveRecentsDev(){
 
 function getFiveRecentsSchool(){
   /*traer los 5 mas recientes en la categoria textos-academicos-biblioteca*/
-  $.getJSON("http://www.etnassoft.com/api/v1/get/?category=textos-academicos-biblioteca&num_items=5&callback=?",function(results){
+  $.getJSON(url+"?category=textos-academicos-biblioteca&num_items=5&callback=?",function(results){
     
     //variable para determinar el sitio donde se dibujaran los valores
     place = "#replacerecentsSchool";
@@ -101,7 +129,7 @@ function getFiveRecentsSchool(){
 
 function getFiveRecentsLaw(){
   /*traer los 5 mas recientes en la categoria libros_aspecotos_legales*/
-  $.getJSON("http://www.etnassoft.com/api/v1/get/?category=libros_aspecotos_legales&num_items=5&callback=?",function(results){
+  $.getJSON(url+"?category=libros_aspecotos_legales&num_items=5&callback=?",function(results){
     
     //variable para determinar el sitio donde se dibujaran los valores
     place = "#replacerecentsLaw";
@@ -121,7 +149,7 @@ function getFiveRecentsLaw(){
 
 function getTenRecents(){
     /*Trayendo los 10 mas recientes agregados a open libra para la pagina cantidad*/
-    $.getJSON("http://www.etnassoft.com/api/v1/get/?since=last_month&num_items=10&callback=?",function(results){
+    $.getJSON(url+"?since=last_month&num_items=10&callback=?",function(results){
       
       //variable para determinar el sitio donde se dibujaran los valores
       place = "#replacelastten";
@@ -140,7 +168,7 @@ function getTenRecents(){
 
   function getMostViewed(){
     /*Trayendo los mas vistos para la criteria*/
-    $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_viewed&num_items=5&callback=?",function(resultsMostViewed){
+    $.getJSON(url+"?criteria=most_viewed&num_items=5&callback=?",function(resultsMostViewed){
 
       //variable para determinar el sitio donde se dibujaran los valores
       place = "#replacemostviewed";
@@ -161,7 +189,7 @@ function getTenRecents(){
   function getMostCommented(){
 
     /*Trayendo los mas comentados para la criteria*/
-    $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_commented&num_items=5&order=z_a&callback=?",function(resultsMostCommented){
+    $.getJSON(url+"?criteria=most_commented&num_items=5&order=z_a&callback=?",function(resultsMostCommented){
 
       //variable para determinar el sitio donde se dibujaran los valores
       place = "#replacemostcommented";
@@ -180,7 +208,7 @@ function getTenRecents(){
 // FUNCION OBTENER LAS MAS VOTADAS
   function getMostVoted(){
     /*Trayendo los mas comentados para la criteria*/
-    $.getJSON("http://www.etnassoft.com/api/v1/get/?criteria=most_voted&num_items=5&callback=?",function(resultsMostVoted){
+    $.getJSON(url+"?criteria=most_voted&num_items=5&callback=?",function(resultsMostVoted){
 
       //variable para determinar el sitio donde se dibujaran los valores
       place = "#replacemostvoted";
@@ -194,3 +222,34 @@ function getTenRecents(){
     });
 
   }
+
+
+//FUNCION PARA BUSCAR LIBROS
+function searchTerm(terms){
+  $.getJSON(url+"?keyword="+terms+"&category=all&order=newest&lang=all&callback=?",function(resultSearch){
+    // console.log("Tamano: "+resultSearch.length);
+
+    //si no hay resultados, se muestra un mensaje
+    if(resultSearch.length == 0){
+      // console.log("No hay nada que ver");
+      $("#panel-content").html("<h4>Sin resultados</h4>");
+    }else{
+      //llamado a la funcion que dibuja los resultados
+      paintSearchResults(resultSearch);
+    }
+  });
+}
+
+//BOTON QUE ACTIVA LA BUSQUEDA
+
+$("#startSearch").click(function(){
+  var terminos_de_busqueda = "";
+  //asigno el termino de busqueda a la variable
+  terminos_de_busqueda = $("#booksearch").val();
+  //elimino los espacios en mas de dos palabras y los cambio por el signo +
+  //la api lo exige asi
+  terminos_de_busqueda = terminos_de_busqueda.split(' ').join("+");
+  //envio el termino de busqueda a la funcion que hace el llamado
+  searchTerm(terminos_de_busqueda);
+});
+
