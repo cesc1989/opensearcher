@@ -5,7 +5,7 @@ var enlaceAlSitio = "http://www.etnassoft.com/biblioteca/";
 var url = "http://www.etnassoft.com/api/v1/get/";
 
 //DIBUJAR PARA RESULTADOS DE BUSQUEDA
-function paintSearchResults(booksFromTerm){
+function paintSearchResults(booksFromTerm,whereToDraw){
 
   //variable que contendra todos los elementos del JSON
   var booksList = "";
@@ -26,7 +26,7 @@ function paintSearchResults(booksFromTerm){
     booksList += "</ul>";
 
 
-    $("#panel-content").html(booksList);
+    $(whereToDraw).html(booksList);
   }
 
 }
@@ -225,7 +225,7 @@ function getTenRecents(){
 
 
 //FUNCION PARA BUSCAR LIBROS
-function searchTerm(terms){
+function searchTerm(terms,lugar){
   $.getJSON(url+"?keyword="+terms+"&category=all&order=newest&lang=all&callback=?",function(resultSearch){
     // console.log("Tamano: "+resultSearch.length);
 
@@ -235,21 +235,24 @@ function searchTerm(terms){
       $("#panel-content").html("<h4>Sin resultados</h4>");
     }else{
       //llamado a la funcion que dibuja los resultados
-      paintSearchResults(resultSearch);
+      paintSearchResults(resultSearch,lugar);
     }
   });
 }
 
 //BOTON QUE ACTIVA LA BUSQUEDA
 
-function startSearch(){
-  var terminos_de_busqueda = "";
+function startSearch(termino,lugar){
+  var donde = lugar;
+  var terminos_de_busqueda = termino;
   //asigno el termino de busqueda a la variable
-  terminos_de_busqueda = $("input[type=search]").val();
+  // terminos_de_busqueda = $("input[type='text']").val();
   //elimino los espacios en mas de dos palabras y los cambio por el signo +
   //la api lo exige asi
   terminos_de_busqueda = terminos_de_busqueda.split(' ').join("+");
+  console.log(terminos_de_busqueda, donde);
   //envio el termino de busqueda a la funcion que hace el llamado
-  searchTerm(terminos_de_busqueda);
+  searchTerm(terminos_de_busqueda,donde);
+  // $("input[type='text']").val("");
 }
 
