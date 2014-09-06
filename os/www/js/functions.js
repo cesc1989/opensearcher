@@ -245,14 +245,13 @@ function searchTerm(terms,lugar){
 function startSearch(termino,lugar){
   var donde = lugar;
   var terminos_de_busqueda = termino;
-  //asigno el termino de busqueda a la variable
-  // terminos_de_busqueda = $("input[type='text']").val();
+  
   //elimino los espacios en mas de dos palabras y los cambio por el signo +
   //la api lo exige asi
   terminos_de_busqueda = terminos_de_busqueda.split(' ').join("+");
   console.log(terminos_de_busqueda, donde);
   //envio el termino de busqueda a la funcion que hace el llamado
   searchTerm(terminos_de_busqueda,donde);
-  // $("input[type='text']").val("");
+  
 }
 
