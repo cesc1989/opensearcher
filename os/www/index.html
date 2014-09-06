@@ -37,15 +37,15 @@
               <li><a href="#" id="changeToCriteria">Ver libros por Criteria</a></li>
               <li><a href="#" id="changeToQuantity">Ver libros por Cantidad</a></li>
               <li><a href="#aboutpage">Acerca del Open Searcher</a></li>
-              <li><a href="#">Salir de la aplicación</a></li>
+              <li><a href="#" onclick="closeApp();">Salir de la aplicación</a></li>
             </ul>
           </div>
         </div>
         <!-- PANEL DE MENU -->
         
         <div data-role="header" data-position="fixed">
-          <a href="#menuPanel" data-icon="bars">Menú</a>
           <h1>Libros en Open Libra</h1>
+          <a href="#menuPanel" data-icon="bars">Menú</a>
           <a href="#searchPanel" data-icon="search">Buscar</a>
         </div>
 
@@ -54,25 +54,29 @@
           <div class="clear">
             <h2>Libros recién subidos en <em>Programación</em></h2>
           </div>
-          <div id="replacerecentsDev"></div>
+          <div id="replacerecentsDev">
+            <div id="loading"></div>
+          </div>
 
           <div class="clear">
             <h2>Libros recién subidos en <em>Recursos Académicos</em></h2>
           </div>
-          <div id="replacerecentsSchool"></div>
+          <div id="replacerecentsSchool">
+          </div>
 
           <div class="clear">
             <h2>Libros recién subidos en <em>Leyes</em></h2>
           </div>
-          <div id="replacerecentsLaw"></div>
+          <div id="replacerecentsLaw">
+          </div>
 
         </div>
          
         <!-- PANEL DE BUSQUEDAS -->
         <div data-role="panel" id="searchPanel" data-position="right">
           <div class="panel-search">
-              <input type="search" name="searchbook" id="booksearch" placeholder="Escribe..." />
-              <input type="button" id="startSearch" value="Buscar libro">
+              <input type="search" name="searchbook" class="booksearch" placeholder="Escribe..." />
+              <input type="button" onclick="startSearch();" value="Buscar libro">
           </div>
           <div id="panel-content"></div>
         </div>
@@ -109,13 +113,13 @@
               <li><a href="#" id="changeToMain">Regresa al Inicio</a></li>
               <li><a href="#" id="changeToCriteriaFromQ">Ver libros por Criteria</a></li>
               <li><a href="#aboutpage">Acerca del Open Searcher</a></li>
-              <li><a href="#">Salir de la aplicacion</a></li>
+              <li><a href="#" onclick="closeApp();">Salir de la aplicacion</a></li>
             </ul>
           </div>
         </div>
         <!-- PANEL DE MENU -->
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
           <h1>Resultados por cantidad</h1>
           <a href="#menuPanel" data-icon="bars">Menú</a>
           <a href="#searchPanel" data-icon="search">Buscar</a>
@@ -124,15 +128,17 @@
           <div class="clear">
             <h2>Últimos 10 libros publicados</h2>
           </div>
-          <div id="replacelastten"></div>
+          <div id="replacelastten">
+            <div id="loadingLastTen"></div>
+          </div>
 
         </div>
         
         <!-- PANEL -->
         <div data-role="panel" id="searchPanel" data-position="right">
           <div class="panel-content"><p>Busca un libro:
-              <input type="search" name="searchbook" id="booksearch" placeholder="Escribe..." />
-              <input type="button" id="startSearch" value="Buscar libro">
+              <input type="search" name="searchbook" class="booksearch" placeholder="Escribe..." />
+              <input type="button" onclick="startSearch();" value="Buscar libro">
           </div>
           <div id="panel-content"></div>
         </div>
@@ -152,13 +158,13 @@
               <li><a href="#" id="changeToMainFromC">Volver al Inicio</a></li>
               <li><a href="#" id="changeToQuantityFromC">Ver libros por Cantidad</a></li>
               <li><a href="#aboutpage">Acerca del Open Searcher</a></li>
-              <li><a href="#">Salir de la aplicacion</a></li>
+              <li><a href="#" onclick="closeApp();">Salir de la aplicacion</a></li>
             </ul>
           </div>
         </div>
         <!-- PANEL DE MENU -->
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
           <h1>Resultados por criteria</h1>
           <a href="#menuPanel" data-icon="bars">Menú</a>
           <a href="#searchPanel" data-icon="search">Buscar</a>
@@ -167,7 +173,9 @@
           <div class="clear">
             <h2>Los libros <em>Más vistos</em></h2>
           </div>
-          <div id="replacemostviewed"></div>
+          <div id="replacemostviewed">
+            <div id="loadingCriteria"></div>
+          </div>
 
           <div class="clear">
             <h2>Los libros <em>Más comentados</em></h2>
@@ -184,8 +192,8 @@
         <!-- PANEL -->
         <div data-role="panel" id="searchPanel" data-position="right">
           <div class="panel-content">
-              <input type="search" name="searchbook" id="booksearch" placeholder="Escribe..." />
-              <input type="button" id="startSearch" value="Buscar libro">
+              <input type="search" name="searchbook" class="booksearch" placeholder="Escribe..." />
+              <input type="button" onclick="startSearch();" value="Buscar libro">
           </div>
           <div id="panel-content"></div>
         </div>
@@ -206,6 +214,11 @@
       app.initialize();
   </script>
   <!-- /PHONEGAP JAVASCRIPT -->
+
+  <!-- SPINER -->
+  <script type="text/javascript" src="js/spin.min.js"></script>
+  <script type="text/javascript" src="js/spinner.js"></script>
+  <!-- SPINE -->
 
   <!-- JAVASCRIPT REQUIRED -->
   <script type="text/javascript" src="js/normalize.js"></script>

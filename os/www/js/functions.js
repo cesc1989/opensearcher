@@ -242,14 +242,14 @@ function searchTerm(terms){
 
 //BOTON QUE ACTIVA LA BUSQUEDA
 
-$("#startSearch").click(function(){
+function startSearch(){
   var terminos_de_busqueda = "";
   //asigno el termino de busqueda a la variable
-  terminos_de_busqueda = $("#booksearch").val();
+  terminos_de_busqueda = $("input[type=search]").val();
   //elimino los espacios en mas de dos palabras y los cambio por el signo +
   //la api lo exige asi
   terminos_de_busqueda = terminos_de_busqueda.split(' ').join("+");
   //envio el termino de busqueda a la funcion que hace el llamado
   searchTerm(terminos_de_busqueda);
-});
+}
 
