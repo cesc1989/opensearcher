@@ -9,8 +9,8 @@ function showIndicator(){
 }
 
 // Función para hacer efecto de página splash al cargar la aplicación
-$(document).on('pageinit','#splashscreen',function(){
-	 $.mobile.changePage("#mainpage", "fade");
+$(document).on('pageinit','#mainpage',function(){
+	 // $.mobile.changePage("#mainpage", "fade");
 });
 
 // Con esta función, el botón Inicio en Quantity lleva a la principal
@@ -94,17 +94,12 @@ $("#criteriapage").on("pageshow", function(event){
 });
 
 //cerrar aplicacion
-function closeApp(){
-	navigator.notification.confirm(
-        '¿Quieres cerrar la aplicación?',  // message
-        exitFromApp,              // callback to invoke with index of button pressed
-        'Cerrar Aplicación',            // title
-        'Cancelar,Sí'         // buttonLabels
-    );
-}
-
-function exitFromApp(buttonIndex){
-	if (buttonIndex==2){
-       navigator.app.exitApp();
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#mainpage')){
+        e.preventDefault();
+        navigator.app.exitApp();
     }
-}
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
