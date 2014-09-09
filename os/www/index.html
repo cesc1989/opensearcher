@@ -63,11 +63,16 @@
          
         <!-- PANEL DE BUSQUEDAS -->
         <div data-role="panel" id="searchPanel" data-position="right">
+          <p>Busca dentro de las varias categorías que tiene Open Libra: <strong>ciencia, arte, educación, electrónica, idiomas, revistas, software libre</strong>, por mencionar algunas.</p>
+          <p>Lo puedes hacer bien por el título de la categoría o frases claves.</p>
+          <p>Recuerda que son <strong>libros libres</strong>. No esperes encontrar novelas del Quijote o de García Marquez.</p>
           <div class="panel-main">
-              <input type="text" name="searchbook" class="booksearch" placeholder="Escribe..." />
-              <input type="button" onclick="var valor = $('.panel-main .booksearch').val(); startSearch(valor,'#panel-content-main');" value="Buscar libro">
+              <input type="text" name="searchbook" class="booksearch" placeholder="Escribe..." required="true" />
+              <input type="button" onclick="$('.giveMeId').attr('id','loadingSearch');var spinner = new Spinner(optsForSearch).spin(loadingSearch);var valor = $('.panel-main .booksearch').val(); startSearch(valor,'#panel-content-main');" value="Buscar libro">
           </div>
-          <div id="panel-content-main"></div>
+          <ul id="panel-content-main" class="unstyled">
+            <div class="giveMeId"></div>
+          </ul>
         </div>
         <!-- PANEL DE BUSQUEDAS -->
       </div>
@@ -129,11 +134,14 @@
         
         <!-- PANEL -->
         <div data-role="panel" id="searchPanel" data-position="right">
+          <p>Busca dentro de las varias categorías que tiene Open Libra: <strong>ciencia, arte, educación, electrónica, idiomas, revistas, software libre</strong>, por mencionar algunas.</p>
+          <p>Lo puedes hacer bien por el título de la categoría o frases claves.</p>
+          <p>Recuerda que son <strong>libros libres</strong>. No esperes encontrar novelas del Quijote o de García Marquez.</p>
           <div class="panel-QP">
               <input type="text" name="searchbook" class="booksearch" placeholder="Escribe..." />
               <input type="button" onclick="var valor = $('.panel-QP .booksearch').val(); ;startSearch(valor,'#panel-content-QP');" value="Buscar libro">
           </div>
-          <div id="panel-content-QP"></div>
+          <ul id="panel-content-QP" class="unstyled"></ul>
         </div>
         <!-- PANEL -->
       </div>
@@ -183,11 +191,14 @@
             
         <!-- PANEL -->
         <div data-role="panel" id="searchPanel" data-position="right">
+          <p>Busca dentro de las varias categorías que tiene Open Libra: <strong>ciencia, arte, educación, electrónica, idiomas, revistas, software libre</strong>, por mencionar algunas.</p>
+          <p>Lo puedes hacer bien por el título de la categoría o frases claves.</p>
+          <p>Recuerda que son <strong>libros libres</strong>. No esperes encontrar novelas del Quijote o de García Marquez.</p>
           <div class="panel-CP">
               <input type="text" name="searchbook" class="booksearch" placeholder="Escribe..." />
               <input type="button" onclick="var valor = $('.panel-CP .booksearch').val(); startSearch(valor,'#panel-content-CP');" value="Buscar libro">
           </div>
-          <div id="panel-content-CP"></div>
+          <ul id="panel-content-CP" class="unstyled"></ul>
         </div>
         <!-- PANEL -->
       </div>

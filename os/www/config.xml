@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.opensearcher" version="1.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.otroespacioblog.opensearcher" version="1.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Open Searcher</name>
     <description>
         Buscador de Open Libra.
@@ -8,7 +8,7 @@
         Francisco Quintero
     </author>
     <preference name="phonegap-version" value="3.5.0" />
-    <preference name="orientation" value="portrait" />
+    <preference name="orientation" value="default" />
     <preference name="fullscreen" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="show-splash-screen-spinner" value="true" />
@@ -17,5 +17,5 @@
 
     <icon src="icon.png" />
     
-    <access origin="*" />
+    <access origin="http://www.etnassoft.com/" />
 </widget>

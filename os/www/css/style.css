@@ -27,6 +27,17 @@ h2{
 	width: 100%;
 }
 
+/*ESTILO PARA RESULTADOS DE BUSQUEDAS*/
+.unstyled{
+	list-style: none;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+.unstyled li{
+	margin-top: 12px;
+	color: #207cca;
+}
+
 /*ESTILO PARA LA CAJA QUE CONTIENE LA INFORMACION DEL LIBRO*/
 
 .bookBox{

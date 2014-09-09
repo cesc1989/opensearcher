@@ -19,12 +19,11 @@ function paintSearchResults(booksFromTerm,whereToDraw){
     // console.log("Titulo del libro encontrado: "+bookTitle);
     var longTitle = normalize(bookTitle);
     
-    booksList += "<ul>";
+    // booksList += "<ul class='unstyled'>";
       booksList += "<li>";
         booksList += "<a onclick=window.open('"+enlaceAlSitio+longTitle+"','_system','location=no')>"+bookTitle+"</a>";
       booksList += "</li>";
-    booksList += "</ul>";
-
+    // booksList += "</ul>";
 
     $(whereToDraw).html(booksList);
   }
@@ -249,7 +248,7 @@ function startSearch(termino,lugar){
   //elimino los espacios en mas de dos palabras y los cambio por el signo +
   //la api lo exige asi
   terminos_de_busqueda = terminos_de_busqueda.split(' ').join("+");
-  console.log(terminos_de_busqueda, donde);
+  // console.log(terminos_de_busqueda, donde);
   //envio el termino de busqueda a la funcion que hace el llamado
   searchTerm(terminos_de_busqueda,donde);
   
