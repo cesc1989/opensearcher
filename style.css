@@ -1,0 +1,23 @@
+.img-app{
+	height: 390px;
+	width: 42%;
+}
+
+.list-unstyled img{
+	width: 48px;
+	height: 48px;
+}
+
+@media (max-width: 480px){
+	.img-hidden{
+		display: none;
+	}
+	.img-app{
+		width: 100%;
+		height: 20%;
+	}
+	.page-header{
+		margin-top: 5px;
+		margin-bottom: 4px;
+	}
+}
