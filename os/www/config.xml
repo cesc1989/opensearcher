@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.otroespacioblog.opensearcher" version="1.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.otroespacioblog.opensearcher" version="1.2.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Open Searcher</name>
     <description>
         Buscador de Open Libra.
@@ -17,5 +17,5 @@
 
     <icon src="icon.png" />
     
-    <access origin="http://www.etnassoft.com/" />
+    <access origin="http://www.etnassoft.com*" />
 </widget>
