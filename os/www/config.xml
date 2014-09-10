@@ -17,5 +17,5 @@
 
     <icon src="icon.png" />
     
-    <access origin="http://www.etnassoft.com*" />
+    <access origin="*" />
 </widget>
