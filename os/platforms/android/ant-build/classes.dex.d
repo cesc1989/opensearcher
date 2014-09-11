@@ -1,0 +1,23 @@
+/var/www/opensearcher/os/platforms/android/ant-build/classes.dex : \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/com/otroespacioblog/opensearcher/R$string.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/com/otroespacioblog/opensearcher/BuildConfig.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/com/otroespacioblog/opensearcher/OpenSearcher.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/com/otroespacioblog/opensearcher/R$attr.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/com/otroespacioblog/opensearcher/R$drawable.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/com/otroespacioblog/opensearcher/R.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/com/otroespacioblog/opensearcher/R$xml.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$2.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$2.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowserDialog.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$3.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$3.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$1.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$4.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppChromeClient.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$1.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$4.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$InAppBrowserClient.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser.class \
+/var/www/opensearcher/os/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$4$1.class \
+/var/www/opensearcher/os/platforms/android/ant-build/dexedLibs/classes-51b5fd3e3968e023a3d9c57de09c6a62.jar \
