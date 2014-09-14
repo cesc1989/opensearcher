@@ -1,9 +1,15 @@
 /*RESETS*/
 
+.ui-content{
+	background-color: #B4C0C6 !important;
+}
+
 h2{
-	margin-top: 8px;
-	margin-bottom: 0px;
+	margin-top: 14px;
+	margin-bottom: 4px;
 	text-align: center;
+	color: #ff0080;
+	/*text-shadow:1px 1px 1px rgba(0,0,0,0.5);*/
 }
 
 .ui-content{
@@ -20,19 +26,13 @@ h2{
 	text-decoration: none;
 }
 
-/*ESTILO PARA EL LOGO EN LA SPLASH SCREEN*/
-
-.logo{
-	margin-top: 10%;
-	width: 100%;
-}
-
 /*ESTILO PARA RESULTADOS DE BUSQUEDAS*/
 .unstyled{
 	list-style: none;
 	margin-left: 0px;
 	padding-left: 0px;
 }
+
 .unstyled li{
 	margin-top: 12px;
 	color: #207cca;
@@ -42,8 +42,8 @@ h2{
 
 .bookBox{
 	background-color: #fff;
-	box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
 	margin-top: 18px;
+	margin-bottom: 10px;
 }
 
 .booksListInfo{
@@ -58,10 +58,11 @@ h2{
 /*ESTILO PARA EL ENLACE Y TITULO DEL LIBRO*/
 
 h3.bookBoxTitleBook{
-	margin-top: px;
+	margin-top: 0px;
 	padding: 6px 0px 6px 8px;
 	font-weight: normal;
 	height: 44px;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.8);
 }
 
 /*COLORES PARA LOS FONDOS DE LOS TITULOS DE LOS LIBROS*/
@@ -101,15 +102,11 @@ h3.bookBoxTitleBook{
 	color:#fff;
 }
 
-/*CLEAR PARA DIVS DE SECCIONES*/
-
-#replacerecentsDev,#replacerecentsSchool,#replacerecentsLaw{
-}
-
 /*ESTILO PARA LAS IMAGENES DE LAS PORTADAS*/
 
 .booksListImage img{
 	width: 100%;
+	height: 100%;
 }
 
 /*TODAS LAS MEDIA QUERIES*/
@@ -150,7 +147,6 @@ h3.bookBoxTitleBook{
 		width: 280px;
 		height: auto;
 		margin: 0px 0px 0px 12px;
-		padding-bottom: 4px;
 	}
 
 }
@@ -166,6 +162,6 @@ h3.bookBoxTitleBook{
 		float: none;
 		width: 100%;
 		height: auto;
-		margin: 0px;
+		margin: 12px 0px 0px 0px;
 	}
 }

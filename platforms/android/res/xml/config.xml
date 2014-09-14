@@ -8,7 +8,11 @@
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
-    <icon src="res/icon/android/icon.png" />
+    <icon src="/www/res/icon/android/icon.png" />
+    <icon density="ldpi" src="/www/res/icon/android/ldpi.png" />
+    <icon density="mdpi" src="/www/res/icon/android/mdpi.png" />
+    <icon density="hdpi" src="/www/res/icon/android/hdpi.png" />
+    <icon density="xhdpi" src="/www/res/icon/android/xhdpi.png" />
     <name>Open Searcher</name>
     <description>
         Buscador de Open Libra.
