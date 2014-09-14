@@ -65,6 +65,13 @@ function paintBooks(booksResults, placeToDraw, titleColor){
           var autores = bookAuthor;
         }
 
+        //traduzco el idioma del libro
+        if(bookLanguage == "spanish"){
+          bookLanguage = "Español";
+        }else if(bookLanguage == "english"){
+          bookLanguage = "Inglés";
+        }
+
         // COMIENZO A DIBUJAR LOS ELEMENTOS OBTENIDOS
           booksList += "<div class=bookBox>";
             booksList += "<a onclick=window.open('"+enlaceAlSitio+longTitle+"','_system','location=no')>";
