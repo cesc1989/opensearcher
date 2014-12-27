@@ -4,3 +4,5 @@
 *.md~
 *.gitignore~
 platforms/**
+plugins/**
+hooks/**
