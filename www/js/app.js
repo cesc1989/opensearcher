@@ -29,3 +29,15 @@ app.config(function($stateProvider,$urlRouterProvider) {
    $urlRouterProvider.otherwise("/");
 
 });
+
+app.controller("booksListCtrl", function($scope, $http){
+
+	var url = "http://www.etnassoft.com/api/v1/get/";
+
+	$http.get(url).success(function(data){
+		$scope.bookData = data;
+		console.log($scope.bookData);
+		//movie = $scope.bookData.TorrentUrl;
+	});
+
+});
