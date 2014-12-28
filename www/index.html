@@ -19,11 +19,29 @@
   </head>
   <body ng-app="opensearcher">
 
-    <ion-nav-bar class="bar-dark">
-	</ion-nav-bar>
+	<ion-side-menus>
 
-	<ion-nav-view animation="slide-left-right">
-	</ion-nav-view>
+		<ion-side-menu-content ng-controller="menuCtrl">
+			<ion-nav-bar class="bar-dark">
+				<ion-nav-buttons>
+			    	<button class="button ion-navicon-round" ng-click="toggleLeft()"></button>
+				</ion-nav-buttons>
+			</ion-nav-bar>
+
+			<ion-nav-view animation="slide-left-right">
+			</ion-nav-view>
+		</ion-side-menu-content>
+
+		<ion-side-menu side="left">
+			<ion-list>
+				<ion-item menu-close href="#/">Inicio</ion-item>
+				<ion-item menu-close href="#/categories">Categorias</ion-item>
+				<ion-item menu-close href="#/search">Buscar</ion-item>
+				<ion-item menu-close href="#/about">Acerca de</ion-item>
+			</ion-list>
+		</ion-side-menu>
+
+	</ion-side-menus>
 
   </body>
 </html>

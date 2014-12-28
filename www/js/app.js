@@ -27,7 +27,22 @@ app.config(function($stateProvider,$urlRouterProvider) {
     templateUrl: 'home.html'
   });
 
-   $urlRouterProvider.otherwise("/");
+  $stateProvider.state('search',{
+  	url: '/search',
+  	templateUrl: 'search.html'
+  });
+
+  $stateProvider.state('categories', {
+  	url: '/categories',
+  	templateUrl: 'categories.html'
+  });
+
+  $stateProvider.state('about', {
+  	url: '/about',
+  	templateUrl: 'about.html'
+  });
+
+  $urlRouterProvider.otherwise("/");
 
 });
 
@@ -43,4 +58,10 @@ app.controller("booksListCtrl", function($scope, $http){
 		//console.log(bookName);
 	});
 
+});
+
+app.controller("menuCtrl", function($scope, $ionicSideMenuDelegate){
+	$scope.toggleLeft = function() {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
 });
