@@ -24,7 +24,8 @@ app.config(function($stateProvider,$urlRouterProvider) {
   //ruta para la página inicial
   $stateProvider.state('home',{
     url: '/',
-    templateUrl: 'home.html'
+    templateUrl: 'home.html',
+    controller: 'booksListCtrl',
   });
 
   $stateProvider.state('search',{
