@@ -1,9 +1,11 @@
+// Ionic Starter App
 
-var app = angular.module("opensearcher", ['ionic']);
-
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+var app = angular.module('opensearcher', ['ionic'])
 
 app.run(function($ionicPlatform) {
-
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -14,7 +16,6 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-
 });
 
 //Todas las rutas para la aplicacion
@@ -32,12 +33,14 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
 app.controller("booksListCtrl", function($scope, $http){
 
-	var url = "http://www.etnassoft.com/api/v1/get/";
+	//var urlValue = "http://www.etnassoft.com/api/v1/get/?id=589&callback=JSON_CALLBACK";
+	var urlValue = "http://www.etnassoft.com/api/v1/get/?keyword=ruby&num_items=3&callback=JSON_CALLBACK";
 
-	$http.get(url).success(function(data){
+	$http({method:'JSONP', url:urlValue}).success(function(data){
 		$scope.bookData = data;
 		console.log($scope.bookData);
-		//movie = $scope.bookData.TorrentUrl;
+		//bookName = $scope.bookData[0].title;
+		//console.log(bookName);
 	});
 
 });

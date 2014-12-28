@@ -1,9 +1,15 @@
 <ion-view title="Open Searcher">
     <ion-content>
-        <div class="row responsive-sm">
-            <div class="col">
-                <div ng-controller="booksListCtrl"></div>
-            </div>
+        <div ng-controller="booksListCtrl">
+        	<div ng-repeat="book in bookData">
+        		<h1>{{book.title}}</h1>
+        		<p>{{book.author}}</p>
+        		<p>{{book.pages}}</p>
+        		<p>{{book.language}}</p>
+        		<img src="{{book.cover}}">
+        		<a href="{{book.url_download}}">Descargar</a>
+        		<hr>
+        	</div>
         </div>
      </ion-content>
 </ion-view>
