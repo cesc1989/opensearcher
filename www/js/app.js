@@ -49,14 +49,13 @@ app.config(function($stateProvider,$urlRouterProvider) {
 
 app.controller("booksListCtrl", function($scope, $http){
 
-	//var urlValue = "http://www.etnassoft.com/api/v1/get/?id=589&callback=JSON_CALLBACK";
-	var urlValue = "http://www.etnassoft.com/api/v1/get/?keyword=ruby&num_items=3&callback=JSON_CALLBACK";
+	//ULTIMOS LIBROS EN PROGRAMACION
+	var recentDevelopment = "http://www.etnassoft.com/api/v1/get/?category=desarrollo_web&num_items=5&callback=JSON_CALLBACK";
 
-	$http({method:'JSONP', url:urlValue}).success(function(data){
+	$http({method:'JSONP', url:recentDevelopment})
+	.success(function(data){
 		$scope.bookData = data;
-		console.log($scope.bookData);
-		//bookName = $scope.bookData[0].title;
-		//console.log(bookName);
+		//console.log($scope.bookData);
 	});
 
 });
