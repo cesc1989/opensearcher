@@ -1,7 +1,8 @@
 <ion-view title="Open Searcher">
     <ion-content>
-        <div ng-controller="booksListCtrl">
-        	<div ng-repeat="book in bookData">
+        <div>
+        	<h1>Programación</h1>
+        	<div ng-repeat="book in devBooksData">
 
         		<div class="card">
         			<div class="item item-image">
@@ -15,8 +16,43 @@
 		        		<a class="button" href="{{book.url_download}}">Descargar</a>
         			</div>
         		</div>
-
         	</div>
+
+        	<h1>Académicos</h1>
+        	<div ng-repeat="book in schoolBooksData">
+
+        		<div class="card">
+        			<div class="item item-image">
+        				<img src="{{book.cover}}">
+        			</div>
+        			<div class="item item-text-wrap">
+        				<h1>{{book.title}}</h1>
+		        		<p>{{book.author}}</p>
+		        		<p>{{book.pages}}</p>
+		        		<p>{{book.language}}</p>
+		        		<a class="button" href="{{book.url_download}}">Descargar</a>
+        			</div>
+        		</div>
+        	</div>
+
+        	<h1>Leyes</h1>
+        	<div ng-repeat="book in lawBooksData">
+
+        		<div class="card">
+        			<div class="item item-image">
+        				<img src="{{book.cover}}">
+        			</div>
+        			<div class="item item-text-wrap">
+        				<h1>{{book.title}}</h1>
+		        		<p>{{book.author}}</p>
+		        		<p>{{book.pages}}</p>
+		        		<p>{{book.language}}</p>
+		        		<a class="button" href="{{book.url_download}}">Descargar</a>
+        			</div>
+        		</div>
+        	</div>
+
+
         </div>
      </ion-content>
 </ion-view>

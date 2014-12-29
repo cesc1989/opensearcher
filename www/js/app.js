@@ -1,11 +1,8 @@
-// Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
 var app = angular.module('opensearcher', ['ionic'])
 
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform,$ionicLoading,$rootScope) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -16,45 +13,92 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
+
+  //interceptor http para mensaje de carga
+  $rootScope.$on('loading:show', function() {
+    $ionicLoading.show({template: 'Cargando resultados'})
+  })
+
+  $rootScope.$on('loading:hide', function() {
+    $ionicLoading.hide()
+  })
+
 });
 
 //Todas las rutas para la aplicacion
 
-app.config(function($stateProvider,$urlRouterProvider) {
+app.config(function($stateProvider,$urlRouterProvider,$httpProvider) {
   //ruta para la página inicial
   $stateProvider.state('home',{
     url: '/',
     templateUrl: 'home.html',
-    controller: 'booksListCtrl',
+    controller: 'booksListCtrl'
   });
 
   $stateProvider.state('search',{
   	url: '/search',
-  	templateUrl: 'search.html'
+  	templateUrl: 'search.html',
+  	//controller: 'booksSearchCtrl'
   });
 
   $stateProvider.state('categories', {
   	url: '/categories',
-  	templateUrl: 'categories.html'
+  	templateUrl: 'categories.html',
+  	//controller: 'booksCategoriesCtrl'
   });
 
   $stateProvider.state('about', {
   	url: '/about',
-  	templateUrl: 'about.html'
+  	templateUrl: 'about.html',
+  	//controller: 'aboutAppCtrl'
   });
 
   $urlRouterProvider.otherwise("/");
+
+  //interceptor de peticiones http para mostrar la pantalla de carga
+  $httpProvider.interceptors.push(function($rootScope) {
+    return {
+      request: function(config) {
+        $rootScope.$broadcast('loading:show')
+        return config
+      },
+      response: function(response) {
+        $rootScope.$broadcast('loading:hide')
+        return response
+      }
+    }
+  });
 
 });
 
 app.controller("booksListCtrl", function($scope, $http){
 
+	var apiUrl = "http://www.etnassoft.com/api/v1/get/"
+
 	//ULTIMOS LIBROS EN PROGRAMACION
-	var recentDevelopment = "http://www.etnassoft.com/api/v1/get/?category=desarrollo_web&num_items=5&callback=JSON_CALLBACK";
+	var recentDevelopment = apiUrl+"?category=desarrollo_web&num_items=5&callback=JSON_CALLBACK";
 
 	$http({method:'JSONP', url:recentDevelopment})
 	.success(function(data){
-		$scope.bookData = data;
+		$scope.devBooksData = data;
+		//console.log($scope.bookData);
+	});
+
+	//ULTIMOS LIBROS EN ACADEMICOS
+	var recentSchool = apiUrl+"?category=textos-academicos-biblioteca&num_items=5&callback=JSON_CALLBACK";
+
+	$http({method:'JSONP', url:recentSchool})
+	.success(function(data){
+		$scope.schoolBooksData = data;
+		//console.log($scope.bookData);
+	});
+
+	//ULTIMOS LIBROS EN LEYES
+	var recentLaw = apiUrl+"?category=libros_aspecotos_legales&num_items=5&callback=JSON_CALLBACK";
+
+	$http({method:'JSONP', url:recentLaw})
+	.success(function(data){
+		$scope.lawBooksData = data;
 		//console.log($scope.bookData);
 	});
 
