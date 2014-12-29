@@ -49,8 +49,13 @@ app.config(function($stateProvider,$urlRouterProvider,$httpProvider) {
 
   $stateProvider.state('about', {
   	url: '/about',
-  	templateUrl: 'about.html',
-  	//controller: 'aboutAppCtrl'
+  	templateUrl: 'about.html'
+  });
+
+  $stateProvider.state('category', {
+  	url: '/category',
+  	templateUrl: 'category_view.html',
+  	controller: 'categoryCtrl'
   });
 
   $urlRouterProvider.otherwise("/");
