@@ -1,0 +1,162 @@
+[
+  {
+    "id":677,
+    "name":"Ajedrez",
+    "nicename":"ajedrez"
+  },
+  {
+    "id":2007,
+    "name":"Arte - Bellas Artes",
+    "nicename":"arte-bellas-artes"
+  },
+  {
+    "id":234,
+    "name":"Aspectos Legales",
+    "nicename":"libros_aspecotos_legales"
+  },
+  {
+    "id":201,
+    "name":"Bases de datos",
+    "nicename":"bases_de_datos"
+  },
+  {
+    "id":206,
+    "name":"Ciencia",
+    "nicename":"ciencia"
+  },
+  {
+    "id":1188 ,
+    "name":"Cine",
+    "nicename":"cine"
+  },
+  {
+    "id":717,
+    "name":"Cómics",
+    "nicename":"comics"
+  },
+  {
+    "id":209,
+    "name":"Control de Versiones",
+    "nicename":"control_de_versiones"
+  },
+  {
+    "id":212,
+    "name":"Desarrollo Web",
+    "nicename":"desarrollo_web"
+  },
+  {
+    "id":306,
+    "name":"Diseño / 3D",
+    "nicename":"diseno_3d"
+  },
+  {
+    "id":1441,
+    "name":"Educación",
+    "nicename":"educacion-biblioteca"
+  },
+  {
+    "id":2354,
+    "name":"Electrónica",
+    "nicename":"electronica-biblioteca"
+  },
+  {
+    "id":216,
+    "name":"Ensayos / Novelas",
+    "nicename":"ensayos_y_novelas"
+  },
+  {
+    "id":2204,
+    "name":"Filosofía",
+    "nicename":"filosofia-biblioteca"
+  },
+  {
+    "id":1941,
+    "name":"Geografía / Turismo",
+    "nicename":"geografia-turismo"
+  },
+  {
+    "id":2802,
+    "name":"Historia",
+    "nicename":"historia-biblioteca"
+  },
+  {
+    "id":1149,
+    "name":"Idiomas",
+    "nicename":"idiomas"
+  },
+  {
+    "id":640,
+    "name":"Información",
+    "nicename":"informacion"
+  },
+  {
+    "id":217,
+    "name":"Marketing / Business",
+    "nicename":"marketing_y_business"
+  },
+  {
+    "id":218,
+    "name":"Metodologías Ágiles",
+    "nicename":"metodologias_agiles"
+  },
+  {
+    "id":1805,
+    "name":"Multimedia",
+    "nicename":"multimedia-biblioteca"
+  },
+  {
+    "id":1904,
+    "name":"Música",
+    "nicename":"musica-biblioteca"
+  },
+  {
+    "id":220,
+    "name":"Programación",
+    "nicename":"libros_programacion"
+  },
+  {
+    "id":230,
+    "name":"Redes y Sys Admin",
+    "nicename":"redes_y_sysadmins"
+  },
+  {
+    "id":1859,
+    "name":"Retroinformática",
+    "nicename":"retroinformatica-biblioteca"
+  },
+  {
+    "id":596,
+    "name":"Revistas",
+    "nicename":"revistas"
+  },
+  {
+    "id":1295,
+    "name":"Robótica",
+    "nicename":"robotica"
+  },
+  {
+    "id":231,
+    "name":"SEO / SEM",
+    "nicename":"seo_y_sem"
+  },
+  {
+    "id":907,
+    "name":"Software General",
+    "nicename":"software-general"
+  },
+  {
+    "id":232,
+    "name":"Software Libre",
+    "nicename":"libros_software_libre"
+  },
+  {
+    "id":501,
+    "name":"Textos Académicos",
+    "nicename":"textos-academicos-biblioteca"
+  },
+  {
+    "id":235,
+    "name":"Web 2.0 y Social Media",
+    "nicename":"libros_web_2_0_y_social_media"
+  }
+]

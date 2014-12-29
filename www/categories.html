@@ -1,5 +1,13 @@
 <ion-view title="Categories">
     <ion-content>
-       
+       <div class="categories">
+       	<div ng-repeat="category in categoriesList">
+       		<div class="box">
+       			<div class="category">
+       				<a href="{{category.id}}">{{category.name}}</a>
+       			</div>
+       		</div>
+       	</div>
+       </div>
      </ion-content>
 </ion-view>

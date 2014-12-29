@@ -1,5 +1,5 @@
 
-var app = angular.module('opensearcher', ['ionic'])
+var app = angular.module('opensearcher', ['ionic', 'categories'])
 
 app.run(function($ionicPlatform,$ionicLoading,$rootScope) {
 
@@ -37,14 +37,14 @@ app.config(function($stateProvider,$urlRouterProvider,$httpProvider) {
 
   $stateProvider.state('search',{
   	url: '/search',
-  	templateUrl: 'search.html',
+  	templateUrl: 'search.html'
   	//controller: 'booksSearchCtrl'
   });
 
   $stateProvider.state('categories', {
   	url: '/categories',
   	templateUrl: 'categories.html',
-  	//controller: 'booksCategoriesCtrl'
+  	controller: 'booksCategoriesCtrl'
   });
 
   $stateProvider.state('about', {
@@ -81,7 +81,7 @@ app.controller("booksListCtrl", function($scope, $http){
 	$http({method:'JSONP', url:recentDevelopment})
 	.success(function(data){
 		$scope.devBooksData = data;
-		//console.log($scope.bookData);
+		//console.log($scope.devBooksData);
 	});
 
 	//ULTIMOS LIBROS EN ACADEMICOS
