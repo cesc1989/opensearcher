@@ -1,11 +1,34 @@
 <ion-view title="Search">
     <ion-content>
-       <div class="list list-inset">
-		  <label class="item item-input">
-		    <i class="icon ion-search placeholder-icon"></i>
-		    <input type="text" placeholder="Search" ng-model="search.term">
-		  </label>
+
+    	<!-- FORMULARIO DE BUSQUEDA -->
+		<div class="list">
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<i class="icon ion-search placeholder-icon"></i>
+					<input type="text" placeholder="Search" ng-model="search.term">
+				</label>
+				<button ng-click="getKeywords(search.term)" class="button button-small button-balanced">Buscar</button>
+			</div>
 		</div>
-		<p>{{search.term}}</p>
+
+		<!-- MOSTRAR RESULTADOS DE LA BUSQUEDA -->
+		<div class="results">
+			<div ng-repeat="book in searchResults">
+				<div class="card">
+        			<div class="item item-image">
+        				<img src="{{book.cover}}">
+        			</div>
+        			<div class="item item-text-wrap">
+        				<h1>{{book.title}}</h1>
+		        		<p>{{book.author}}</p>
+		        		<p>{{book.pages}}</p>
+		        		<p>{{book.language}}</p>
+		        		<a class="button" href="{{book.url_download}}">Descargar</a>
+        			</div>
+        		</div>
+			</div>
+		</div>
+
      </ion-content>
 </ion-view>

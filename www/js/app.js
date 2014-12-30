@@ -1,5 +1,5 @@
 
-var app = angular.module('opensearcher', ['ionic', 'categories'])
+var app = angular.module('opensearcher', ['ionic', 'categories', 'search'])
 
 app.run(function($ionicPlatform,$ionicLoading,$rootScope) {
 
@@ -37,8 +37,8 @@ app.config(function($stateProvider,$urlRouterProvider,$httpProvider) {
 
   $stateProvider.state('search',{
   	url: '/search',
-  	templateUrl: 'search.html'
-  	//controller: 'booksSearchCtrl'
+  	templateUrl: 'search.html',
+  	controller: 'booksSearchCtrl'
   });
 
   $stateProvider.state('categories', {
