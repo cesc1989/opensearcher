@@ -1,14 +1,3 @@
-# Open Searcher
-
-**Open Searcher** es una aplicación que hace uso de la API de [Open Libra](http://wwww.openlibra.com) para mostrar a los usuarios los libros publicados en esta plataformas en las categorías:
-* Desarrollo de software
-* Libros académicos
-* Libros de leyes
-
-Además, puedes revisar los últimos libros en todas las categorias.
-
-Existe un buscador para encontrar libros por otros temas, de acuerdo a las categorías que ofrece Open Libra.
-
 # The MIT License (MIT)
 
 ## Copyright (c) 2014 Francisco Quintero

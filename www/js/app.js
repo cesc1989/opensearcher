@@ -76,7 +76,7 @@ app.config(function($stateProvider,$urlRouterProvider,$httpProvider) {
 
 });
 
-app.controller("booksListCtrl", function($scope, $http){
+app.controller("booksListCtrl", function($scope, $http, $window){
 
 	var apiUrl = "http://www.etnassoft.com/api/v1/get/"
 
@@ -86,7 +86,7 @@ app.controller("booksListCtrl", function($scope, $http){
 	$http({method:'JSONP', url:recentDevelopment})
 	.success(function(data){
 		$scope.devBooksData = data;
-		//console.log($scope.devBooksData);
+		/*console.log($scope.devBooksData);*/
 	});
 
 	//ULTIMOS LIBROS EN ACADEMICOS
