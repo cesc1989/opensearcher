@@ -6,7 +6,7 @@ search.controller('booksSearchCtrl', function($scope, $http, $rootScope){
 
 		$scope.keywords = keywords;
 
-		var searchUrl = "http://www.etnassoft.com/api/v1/get/?keyword="+$scope.keywords+"&num_items=16&callback=JSON_CALLBACK";
+		var searchUrl = "http://www.etnassoft.com/api/v1/get/?keyword="+$scope.keywords+"&num_items=10&callback=JSON_CALLBACK";
 		//console.log(searchUrl);
 
 		$http({method:"JSONP", url: searchUrl}).success(function(data){
