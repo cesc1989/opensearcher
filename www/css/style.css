@@ -1,1 +1,38 @@
-/* Empty. Add your own CSS if you like */
+.body{
+	font-size: 100%;
+	color: #333;
+}
+
+ion-content{
+	background-color: #E5E5E5;
+}
+
+@media (min-width:320px) and (max-width: 480px){
+
+	h2{
+		padding: 10px 0px 0px 20px;
+	}
+
+	.box{
+		width: 45%;
+		display: inline-block;
+		background-color: #fff;
+		margin-left: 9px;
+		border-radius: 2px;
+		margin-bottom: 10px;
+		box-shadow: 0px 2px 2px rgba(0,0,0,0.6);
+	}
+
+	.box-content .box-title{
+		font-size: 1.1em;
+	}
+
+}
+
+.box-image, .box-content{
+	padding: 2px 6px 0px;
+}
+
+.box-image img{
+	width: 100%;
+}

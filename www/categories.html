@@ -1,13 +1,9 @@
 <ion-view title="Categories">
     <ion-content>
-       <div class="categories">
-       	<div ng-repeat="category in categoriesList">
-       		<div class="box">
-       			<div class="category" ng-controller="categoryCtrl">
-       				<a href="#/category" ng-click="showCategory({{category.id}})">{{category.name}}</a>
-       			</div>
-       		</div>
-       	</div>
-       </div>
+       	<ul class="category" ng-repeat="category in categoriesList">
+   			<div ng-controller="categoryCtrl">
+   				<a class="item" href="#/category" ng-click="showCategory({{category.id}})">{{category.name}}</a>
+   			</div>
+       	</ul>
      </ion-content>
 </ion-view>

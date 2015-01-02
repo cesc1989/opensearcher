@@ -1,58 +1,48 @@
 <ion-view title="Open Searcher">
     <ion-content>
-        <div>
-        	<h1>Programación</h1>
-        	<div ng-repeat="book in devBooksData">
-
-        		<div class="card">
-        			<div class="item item-image">
-        				<img src="{{book.cover}}">
-        			</div>
-        			<div class="item item-text-wrap">
-        				<h1>{{book.title}}</h1>
-		        		<p>{{book.author}}</p>
-		        		<p>{{book.pages}}</p>
-		        		<p>{{book.language}}</p>
-		        		<a class="button" id="external" href="{{book.url_download}}">Descargar</a>
-        			</div>
-        		</div>
-        	</div>
-
-        	<h1>Académicos</h1>
-        	<div ng-repeat="book in schoolBooksData">
-
-        		<div class="card">
-        			<div class="item item-image">
-        				<img src="{{book.cover}}">
-        			</div>
-        			<div class="item item-text-wrap">
-        				<h1>{{book.title}}</h1>
-		        		<p>{{book.author}}</p>
-		        		<p>{{book.pages}}</p>
-		        		<p>{{book.language}}</p>
-		        		<a class="button" id="external" href="{{book.url_download}}">Descargar</a>
-        			</div>
-        		</div>
-        	</div>
-
-        	<h1>Leyes</h1>
-        	<div ng-repeat="book in lawBooksData">
-
-        		<div class="card">
-        			<div class="item item-image">
-        				<img src="{{book.cover}}">
-        			</div>
-        			<div class="item item-text-wrap">
-        				<h1>{{book.title}}</h1>
-		        		<p>{{book.author}}</p>
-		        		<p>{{book.pages}}</p>
-		        		<p>{{book.language}}</p>
-		        		<a class="button" id="external" href="{{book.url_download}}">Descargar</a>
-        			</div>
-        		</div>
-        	</div>
-
-
+        <div class="row">
+        	<h2>Programación</h2>
         </div>
+        	<div class="box" ng-repeat="book in devBooksData">
+    			<div class="box-image">
+    				<img src="{{book.cover}}">
+    			</div>
+    			<div class="box-content">
+    				<p class="box-title">{{book.title}}</p>
+	        		<p>{{book.author}}</p>
+	        		<a class="button button-block button-positive" id="external" href="{{book.url_download}}">Descargar</a>
+    			</div>
+        	</div>
+
+        <div class="row">
+        	<h2>Académicos</h2>
+        </div>
+        	<div class="box" ng-repeat="book in schoolBooksData">
+				<div class="box-image">
+    				<img src="{{book.cover}}">
+    			</div>
+    			<div class="box-content">
+    				<p class="box-title">{{book.title}}</p>
+	        		<p>{{book.author}}</p>
+	        		<a class="button button-block button-calm" id="external" href="{{book.url_download}}">Descargar</a>
+    			</div>
+        	</div>
+        </div>
+
+        <div class="row">
+        	<h2>Leyes</h2>
+        </div>
+        	<div class="box" ng-repeat="book in lawBooksData">
+        		<div class="box-image">
+    				<img src="{{book.cover}}">
+    			</div>
+    			<div class="box-content">
+    				<p class="box-title">{{book.title}}</p>
+	        		<p>{{book.author}}</p>
+	        		<a class="button button-block button-balanced" id="external" href="{{book.url_download}}">Descargar</a>
+    			</div>
+        	</div>
+        </div>
+
      </ion-content>
 </ion-view>

@@ -3,20 +3,15 @@
     	<div>
     		<button class="button button-block button-balanced" ng-click="goBack()">Volver</button>
     	</div>
-    	<div ng-repeat="book in results">
-
-        		<div class="card">
-        			<div class="item item-image">
-        				<img src="{{book.cover}}">
-        			</div>
-        			<div class="item item-text-wrap">
-        				<h1>{{book.title}}</h1>
-		        		<p>{{book.author}}</p>
-		        		<p>{{book.pages}}</p>
-		        		<p>{{book.language}}</p>
-		        		<a class="button" id="external" href="{{book.url_download}}">Descargar</a>
-        			</div>
-        		</div>
-        	</div>
+    	<div class="box" ng-repeat="book in results">
+    		<div class="box-image">
+				<img src="{{book.cover}}">
+			</div>
+			<div class="box-content">
+				<p class="box-title">{{book.title}}</p>
+        		<p>{{book.author}}</p>
+        		<a class="button button-block button-positive" id="external" href="{{book.url_download}}">Descargar</a>
+			</div>
+    	</div>
      </ion-content>
 </ion-view>

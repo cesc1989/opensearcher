@@ -81,7 +81,7 @@ app.controller("booksListCtrl", function($scope, $http, $window){
 	var apiUrl = "http://www.etnassoft.com/api/v1/get/"
 
 	//ULTIMOS LIBROS EN PROGRAMACION
-	var recentDevelopment = apiUrl+"?category=desarrollo_web&num_items=5&callback=JSON_CALLBACK";
+	var recentDevelopment = apiUrl+"?category=desarrollo_web&num_items=8&callback=JSON_CALLBACK";
 
 	$http({method:'JSONP', url:recentDevelopment})
 	.success(function(data){
@@ -90,7 +90,7 @@ app.controller("booksListCtrl", function($scope, $http, $window){
 	});
 
 	//ULTIMOS LIBROS EN ACADEMICOS
-	var recentSchool = apiUrl+"?category=textos-academicos-biblioteca&num_items=5&callback=JSON_CALLBACK";
+	var recentSchool = apiUrl+"?category=textos-academicos-biblioteca&num_items=8&callback=JSON_CALLBACK";
 
 	$http({method:'JSONP', url:recentSchool})
 	.success(function(data){
@@ -99,7 +99,7 @@ app.controller("booksListCtrl", function($scope, $http, $window){
 	});
 
 	//ULTIMOS LIBROS EN LEYES
-	var recentLaw = apiUrl+"?category=libros_aspecotos_legales&num_items=5&callback=JSON_CALLBACK";
+	var recentLaw = apiUrl+"?category=libros_aspecotos_legales&num_items=8&callback=JSON_CALLBACK";
 
 	$http({method:'JSONP', url:recentLaw})
 	.success(function(data){
